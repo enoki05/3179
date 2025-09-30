@@ -3,6 +3,12 @@
   "title": "Australian Employment Rates by Region in 2021",
   "width": 800,
   "height": 400,
+  "config": {
+    "view": {
+      "stroke": "black",
+      "strokeWidth": 2
+    }
+  },
   "projection": {"type": "mercator"},
   "layer": [
     {
@@ -23,15 +29,15 @@
         },
         {
           "calculate": "datum.Employed / datum['Working Age Population'] * 100",
-          "as": "Employment Rate"
+          "as": "Employment Rate Percent"
         },
         {
-          "calculate": "(datum['Employment Rate'] - 60) / (75 - 60)",
+          "calculate": "(datum['Employment Rate Percent'] - 60) / (75 - 60)",
           "as": "Employment Rate Normalized"
         },
         {
-          "calculate": "round(datum['Employment Rate'] * 100) / 100 + '%'",
-          "as": "Employment Rate Label"
+          "calculate": "round(datum['Employment Rate Percent'] * 100) / 100 + '%'",
+          "as": "Employment Rate"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.2},
@@ -49,12 +55,14 @@
             "values": [0, 0.25, 0.5, 0.75, 1],
             "format": ".1f",
             "titleAnchor": "middle",
+            "orient": "right",
+            "offset": -200,
             "labelExpr": "60 + datum.value * 15"
           }
         },
         "tooltip": [
           {"field": "properties.SA4_NAME21", "type": "nominal", "title": "Region"},
-          {"field": "Employment Rate Label", "type": "nominal"}
+          {"field": "Employment Rate", "type": "nominal"}
         ]
       }
     },
