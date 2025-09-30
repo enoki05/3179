@@ -1,89 +1,89 @@
-SA4 NAME,Employed
-Capital Region,136.7
-Central Coast,189.9
-Central West,119.9
-Coffs Harbour - Grafton,77.6
-Far West and Orana,64.4
-Hunter Valley exc Newcastle,162.1
-Illawarra,175.4
-Mid North Coast,112.1
-Murray,71.9
-New England and North West,102.8
-Newcastle and Lake Macquarie,221.7
-Richmond - Tweed,142.3
-Riverina,96.8
-Southern Highlands and Shoalhaven,82.7
-Sydney - Baulkham Hills and Hawkesbury,160.8
-Sydney - Blacktown,235.6
-Sydney - City and Inner South,235.9
-Sydney - Eastern Suburbs,170.2
-Sydney - Inner South West,338.1
-Sydney - Inner West,195
-Sydney - North Sydney and Hornsby,257.3
-Sydney - Northern Beaches,166
-Sydney - Outer South West,171.5
-Sydney - Outer West and Blue Mountains,193.5
-Sydney - Parramatta,282.1
-Sydney - Ryde,123.3
-Sydney - South West,244.7
-Sydney - Sutherland,138.7
-Ballarat,95.2
-Bendigo,92.8
-Geelong,186.2
-Hume,105.9
-Latrobe - Gippsland,161.7
-Melbourne - Inner,428.1
-Melbourne - Inner East,215.7
-Melbourne - Inner South,254.1
-Melbourne - North East,315.5
-Melbourne - North West,235.2
-Melbourne - Outer East,306
-Melbourne - South East,500.5
-Melbourne - West,502.2
-Mornington Peninsula,170.4
-North West,89.8
-Shepparton,77.5
-Warrnambool and South West,75.4
-Brisbane - East,141.8
-Brisbane - North,139.4
-Brisbane - South,230.4
-Brisbane - West,112.2
-Brisbane Inner City,202.9
-Cairns,155.3
-Darling Downs - Maranoa,74.8
-Central Queensland,134
-Gold Coast,390.5
-Ipswich,208.9
-Logan - Beaudesert,205.1
-Mackay - Isaac - Whitsunday,113.8
-Moreton Bay - North,143.5
-Moreton Bay - South,132.9
-Queensland - Outback,45.6
-Sunshine Coast,233.2
-Toowoomba,93.6
-Townsville,140.5
-Wide Bay,153.9
-Adelaide - Central and Hills,184.1
-Adelaide - North,250.9
-Adelaide - South,212.6
-Adelaide - West,143.6
-Barossa - Yorke - Mid North,60.3
-South Australia - Outback,44.5
-South Australia - South East,105.5
-Bunbury,115.6
-Mandurah,58.6
-Perth - Inner,119.5
-Perth - North East,172.6
-Perth - North West,358.3
-Perth - South East,325.8
-Perth - South West,273.2
-Western Australia - Wheat Belt,82.7
-Western Australia - Outback (North),53.2
-Western Australia - Outback (South),71.4
-Hobart,143.6
-Launceston and North East,84.7
-South East,22.4
-West and North West,63.5
-Darwin,96.8
-Northern Territory - Outback,41.8
-Australian Capital Territory,283.3
+SA4 NAME,Working Age Population,Employed
+Capital Region,192933,136700
+Central Coast,266332,189900
+Central West,159466,119900
+Coffs Harbour - Grafton,103208,77600
+Far West and Orana,85668,64400
+Hunter Valley exc Newcastle,215622,162100
+Illawarra,233413,175400
+Mid North Coast,149161,112100
+Murray,95647,71900
+New England and North West,136726,102800
+Newcastle and Lake Macquarie,294950,221700
+Richmond - Tweed,189321,142300
+Riverina,128743,96800
+Southern Highlands and Shoalhaven,110014,82700
+Sydney - Baulkham Hills and Hawkesbury,213952,160800
+Sydney - Blacktown,313473,235600
+Sydney - City and Inner South,313874,235900
+Sydney - Eastern Suburbs,226497,170200
+Sydney - Inner South West,449700,338100
+Sydney - Inner West,259581,195000
+Sydney - North Sydney and Hornsby,342365,257300
+Sydney - Northern Beaches,220859,166000
+Sydney - Outer South West,228143,171500
+Sydney - Outer West and Blue Mountains,257635,193500
+Sydney - Parramatta,375000,282100
+Sydney - Ryde,164072,123300
+Sydney - South West,325599,244700
+Sydney - Sutherland,184581,138700
+Ballarat,126647,95200
+Bendigo,123503,92800
+Geelong,247754,186200
+Hume,125354,105900
+Latrobe - Gippsland,215041,161700
+Melbourne - Inner,569611,428100
+Melbourne - Inner East,287126,215700
+Melbourne - Inner South,338174,254100
+Melbourne - North East,419910,315500
+Melbourne - North West,313174,235200
+Melbourne - Outer East,407186,306000
+Melbourne - South East,666317,500500
+Melbourne - West,668263,502200
+Mornington Peninsula,226797,170400
+North West,119461,89800
+Shepparton,103114,77500
+Warrnambool and South West,100299,75400
+Brisbane - East,188683,141800
+Brisbane - North,185449,139400
+Brisbane - South,306827,230400
+Brisbane - West,149401,112200
+Brisbane Inner City,270060,202900
+Cairns,206742,155300
+Darling Downs - Maranoa,99551,74800
+Central Queensland,178293,134000
+Gold Coast,519760,390500
+Ipswich,278144,208900
+Logan - Beaudesert,273053,205100
+Mackay - Isaac - Whitsunday,151497,113800
+Moreton Bay - North,191017,143500
+Moreton Bay - South,176796,132900
+Queensland - Outback,60719,45600
+Sunshine Coast,310329,233200
+Toowoomba,124551,93600
+Townsville,187066,140500
+Wide Bay,204820,153900
+Adelaide - Central and Hills,245060,184100
+Adelaide - North,334132,251000
+Adelaide - South,283234,212600
+Adelaide - West,191018,143600
+Barossa - Yorke - Mid North,80240,60300
+South Australia - Outback,59232,44500
+South Australia - South East,140479,105500
+Bunbury,169281,115600
+Mandurah,78024,58600
+Perth - Inner,159162,119500
+Perth - North East,229820,172600
+Perth - North West,477066,358300
+Perth - South East,433832,325800
+Perth - South West,363713,273200
+Western Australia - Wheat Belt,110180,82700
+Western Australia - Outback (North),70779,53200
+Western Australia - Outback (South),95006,71400
+Hobart,191138,143600
+Launceston and North East,112725,84700
+South East,29820,22400
+West and North West,84581,63500
+Darwin,128886,96800
+Northern Territory - Outback,55629,41800
+Australian Capital Territory,376856,283300
