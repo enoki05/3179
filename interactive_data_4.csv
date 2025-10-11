@@ -1,36 +1,36 @@
 Category,Category Type, 2024_Count,2029_Projected_Count,2034_Projected_Count
-Industry,Accommodation and Food Services, 929.9 , 984.8 ," 1,040.6 "
-Industry,Administrative and Support Services, 437.6 , 452.5 , 474.4 
-Industry,"Agriculture, Forestry and Fishing", 322.8 , 330.2 , 345.6 
-Industry,Arts and Recreation Services, 270.5 , 284.6 , 300.7 
-Industry,Construction," 1,357.7 "," 1,452.8 "," 1,520.3 "
-Industry,Education and Training," 1,210.2 "," 1,281.8 "," 1,360.3 "
-Industry,"Electricity, Gas, Water and Waste Services", 184.2 , 197.4 , 209.2 
-Industry,Financial and Insurance Services, 529.9 , 571.0 , 608.0 
-Industry,Healthcare and Social Assistance," 2,260.4 "," 2,543.5 "," 2,845.3 "
-Industry,Information Media and Telecommunications, 191.1 , 203.8 , 219.2 
-Industry,Manufacturing, 909.1 , 907.3 , 959.3 
-Industry,Mining, 300.4 , 307.3 , 326.4 
-Industry,Other Services, 525.5 , 544.1 , 571.8 
-Industry,"Professional, Scientific and Technical Services"," 1,324.6 "," 1,469.1 "," 1,579.1 "
-Industry,Public Administration and Safety, 941.8 , 983.0 ," 1,034.1 "
-Industry,"Rental, Hiring and Real Estate Services", 226.2 , 245.1 , 260.8 
-Industry,Retail trade," 1,320.3 "," 1,366.8 "," 1,420.1 "
-Industry,"Transport, Postal and Warehousing", 736.9 , 773.9 , 812.6 
-Industry,Wholesale Trade, 384.2 , 411.6 , 437.6 
-Occupation,Clerical and Administrative Workers," 1,855.1 "," 1,923.7 "," 2,029.6 "
-Occupation,Community and Personal Service Workers," 1,666.1 "," 1,812.1 "," 1,960.7 "
-Occupation,Labourers," 1,217.9 "," 1,227.9 "," 1,272.4 "
-Occupation,Machinery Operators and Drivers, 920.2 , 960.0 ," 1,007.7 "
-Occupation,Managers," 1,856.9 "," 2,008.4 "," 2,148.1 "
-Occupation,Professionals," 3,763.2 "," 4,173.1 "," 4,548.3 "
-Occupation,Sales Workers," 1,116.1 "," 1,155.9 "," 1,204.1 "
-Occupation,Technicians and Trades Workers," 1,967.8 "," 2,049.5 "," 2,154.6 "
-State,NSW," 4,473.5 "," 4,709.6 "," 4,996.7 "
-State,VIC," 3,724.8 "," 4,040.4 "," 4,352.5 "
-State,QLD," 2,929.2 "," 3,129.7 "," 3,324.3 "
-State,WA," 1,600.3 "," 1,711.5 "," 1,826.9 "
-State,SA, 945.0 , 979.9 ," 1,035.1 "
-State,TAS, 285.9 , 300.6 , 317.4 
-State,NT, 136.1 , 145.8 , 155.5 
-State,ACT, 268.5 , 293.2 , 317.1 
+Industry,Accommodation and Food Services,929.9,984.8,"1,040.60"
+Industry,Administrative and Support Services,437.6,452.5,474.4
+Industry,"Agriculture, Forestry and Fishing",322.8,330.2,345.6
+Industry,Arts and Recreation Services,270.5,284.6,300.7
+Industry,Construction,"1,357.70","1,452.80","1,520.30"
+Industry,Education and Training,"1,210.20","1,281.80","1,360.30"
+Industry,"Electricity, Gas, Water and Waste Services",184.2,197.4,209.2
+Industry,Financial and Insurance Services,529.9,571,608
+Industry,Healthcare and Social Assistance,"2,260.40","2,543.50","2,845.30"
+Industry,Information Media and Telecommunications,191.1,203.8,219.2
+Industry,Manufacturing,909.1,907.3,959.3
+Industry,Mining,300.4,307.3,326.4
+Industry,Other Services,525.5,544.1,571.8
+Industry,"Professional, Scientific and Technical Services","1,324.60","1,469.10","1,579.10"
+Industry,Public Administration and Safety,941.8,983,"1,034.10"
+Industry,"Rental, Hiring and Real Estate Services",226.2,245.1,260.8
+Industry,Retail trade,"1,320.30","1,366.80","1,420.10"
+Industry,"Transport, Postal and Warehousing",736.9,773.9,812.6
+Industry,Wholesale Trade,384.2,411.6,437.6
+Occupation,Clerical and Administrative Workers,"1,855.10","1,923.70","2,029.60"
+Occupation,Community and Personal Service Workers,"1,666.10","1,812.10","1,960.70"
+Occupation,Labourers,"1,217.90","1,227.90","1,272.40"
+Occupation,Machinery Operators and Drivers,920.2,960,"1,007.70"
+Occupation,Managers,"1,856.90","2,008.40","2,148.10"
+Occupation,Professionals,"3,763.20","4,173.10","4,548.30"
+Occupation,Sales Workers,"1,116.10","1,155.90","1,204.10"
+Occupation,Technicians and Trades Workers,"1,967.80","2,049.50","2,154.60"
+State,NSW,"4,473.50","4,709.60","4,996.70"
+State,VIC,"3,724.80","4,040.40","4,352.50"
+State,QLD,"2,929.20","3,129.70","3,324.30"
+State,WA,"1,600.30","1,711.50","1,826.90"
+State,SA,945,979.9,"1,035.10"
+State,TAS,285.9,300.6,317.4
+State,NT,136.1,145.8,155.5
+State,ACT,268.5,293.2,317.1
