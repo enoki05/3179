@@ -1,4 +1,4 @@
-Category,Category Type, 2024_Count,2029_Projected_Count (000's),2034_Projected_Count
+Category,Category Type, 2024_Count,2029_Projected_Count_(000's),2034_Projected_Count
 Industry,Accommodation and Food Services,929.90,984.80,1040.60
 Industry,Administrative and Support Services,437.60,452.50,474.40
 Industry,"Agriculture, Forestry and Fishing",322.80,330.20,345.60
@@ -34,3 +34,4 @@ State,SA,945.00,979.90,1035.10
 State,TAS,285.90,300.60,317.40
 State,NT,136.10,145.80,155.50
 State,ACT,268.50,293.20,317.10
+
