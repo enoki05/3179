@@ -48,7 +48,7 @@
   "vconcat": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/enoki05/3179/heads/main/interactive_data_5.csv"
+        "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/interactive_data_5.csv"
       },
       "title": {"text": "Employment Projections by Category"},
       "width": 600,
@@ -147,7 +147,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/enoki05/3179/heads/main/area_data.csv"
+        "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/area_data.csv"
       },
       "width": 600,
       "title": {"text": "Recruitment Rate Over Time by Region"},
