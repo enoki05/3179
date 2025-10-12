@@ -1,0 +1,239 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Courier New",
+    "axis": {
+      "labelFontWeight": "normal",
+      "titleFontWeight": "normal"
+    },
+    "view": {
+      "stroke": "transparent",
+      "padding": {"bottom": 40}
+    },
+    "style": {
+    "tooltip": {
+      "font": "Courier New",
+      "fontSize": 12,
+      "fontWeight": "normal"
+    }
+  }
+  },
+  "spacing": 80,
+  "params": [
+    {
+      "name": "Category",
+      "value": "Industry",
+      "bind": {
+        "input": "select",
+        "options": ["Industry", "Occupation", "State"],
+        "labels": ["Industry", "Occupation", "State"],
+        "name": "Filter Projections Chart by Category: "
+      },
+      "expr": "Category"
+    },
+    {
+      "name": "region_selection",
+      "value": "Australian Capital Territory",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Australian Capital Territory", "New South Wales", "Victoria", 
+          "Queensland", "South Australia", "Western Australia", 
+          "Tasmania", "Northern Territory"
+        ],
+        "name": "Filter Recruitment Chart by Region: "
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/enoki05/3179/heads/main/interactive_data_5.csv"
+      },
+      "title": {"text": "Employment Projections by Category"},
+      "width": 600,
+      "height": 400,
+      "transform": [
+        { "filter": "trim(datum.Category) == Category" },
+        {
+          "calculate": "toNumber(datum['2029_Projected_Count'])",
+          "as": "count_numeric"
+        }
+        
+      ],
+      "layer": [
+        {
+          "mark": {"type": "bar", "color": "#ae84d8"},
+          "encoding": {
+            "x": {
+              "field": "Category Type",
+              "type": "nominal",
+              "title": {"signal": "Category"},
+              "axis": {
+                "labelFontSize": 10,
+                "labelAngle": -40,
+                "labelLimit": 400,
+                "labelPadding": 10,
+                "titlePadding": 35,
+                "titleFontWeight":"bold"
+              }
+            },
+            "y": {
+              "field": "count_numeric",
+              "type": "quantitative",
+              "title": "2029 Projected Count (000s)",
+              "axis": {
+              "titleFontWeight":"bold"
+              }
+            },
+            "tooltip": [
+              {"field": "Category Type", "type": "nominal"},
+              {"field": "count_numeric", "type": "quantitative", "format": ",.1d","title": "2029 Projected Count (000s)"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "aggregate": [
+                {"op": "argmax", "field": "count_numeric", "as": "max_record"}
+              ]
+            },
+            {
+              "calculate": "datum.max_record['Category Type']",
+              "as": "max_category"
+            },
+            {
+              "calculate": "datum.max_record.count_numeric",
+              "as": "max_count"
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "point",
+                "shape": "triangle-down",
+                "size": 150,
+                "color": "#ae84d8",
+                "yOffset": -10
+              },
+              "encoding": {
+                "x": {"field": "max_category", "type": "nominal"},
+                "y": {"field": "max_count", "type": "quantitative"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "fontSize": 10,
+                "fontWeight": "bold",
+                "color": "#ae84d8",
+                "yOffset": -30
+              },
+              "encoding": {
+                "x": {"field": "max_category", "type": "nominal"},
+                "y": {"field": "max_count", "type": "quantitative"},
+                "text": {
+                  "value": {
+                    "expr": "datum.max_category + ' has the highest count of ' + format(datum.max_count, '.1d')"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/enoki05/3179/heads/main/area_data.csv"
+      },
+      "width": 600,
+      "title": {"text": "Recruitment Rate Over Time by Region"},
+      "transform": [
+        {
+          "calculate": "datetime(2000 + parseInt(split(datum.Quarter, '-')[1]), indexof('  Mar  Jun  Sep  Dec', substring(datum.Quarter, 0, 3)) / 5 * 3, 1)",
+          "as": "Date"
+        },
+        {
+          "fold": [
+            "New South Wales", "Victoria", "Queensland", "South Australia",
+            "Western Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"
+          ],
+          "as": ["Region", "value"]
+        },
+        { "filter": "datum.Region == region_selection" },
+        {
+          "calculate": "toNumber(datum.value)",
+          "as": "value_numeric"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {"type": "area", "line": true, "color": "#a78ec0"},
+          "encoding": {
+            "x": {
+              "field": "Date",
+              "type": "temporal",
+              "axis": {
+                "format": "%b %Y",
+                "labelAngle": -45,
+                "titlePadding": 25,
+                "titleFontWeight":"bold"
+              }
+            },
+            "y": {
+              "field": "value_numeric",
+              "type": "quantitative",
+              "scale": {"domain": [0, 0.8]},
+              "axis": {"tickCount": 5, "grid": false, "format": ".0%","titleFontWeight":"bold"},
+              "title": "Recruitment Rate"
+            },
+            "tooltip": [
+              {"field": "Region", "type": "nominal", "title": "Region"},
+              {"field": "Date", "type": "temporal", "title": "Date", "format": "%b %Y"},
+              {"field": "value_numeric", "type": "quantitative", "title": "Recruitment Rate (%)", "format": ",.1%"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {"window": [{"op": "row_number", "as": "row_num"}], "sort": [{"field": "Date", "order": "ascending"}]},
+            {"joinaggregate": [{"op": "max", "field": "row_num", "as": "max_row"}]},
+            {"filter": "datum.row_num == datum.max_row"}
+          ],
+          "layer": [
+            {
+              "mark": {"type": "point", "shape": "circle", "size": 50, "color": "#6b4c8a", "filled": true},
+              "encoding": {
+                "x": {"field": "Date", "type": "temporal"},
+                "y": {"field": "value_numeric", "type": "quantitative"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": 10,
+                "fontSize": 8,
+                "fontWeight": "bold",
+                "color": "#6b4c8a",
+                "yOffset": -40
+              },
+              "encoding": {
+                "x": {"field": "Date", "type": "temporal"},
+                "y": {"field": "value_numeric", "type": "quantitative"},
+                "text": {
+                  "value": {
+                    "expr": "'Current amount of companies recruiting is ' + format(datum.value_numeric, '.1%')"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
