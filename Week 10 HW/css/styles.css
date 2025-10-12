@@ -1,0 +1,26 @@
+#choropleth_map {
+	top:100px;
+	bottom: 100px; 
+	/*height: 1000px;
+	width: 800px;*/
+}
+div.vl-tooltip {
+    text-align: left !important;
+	font-family: "Courier New", sans-serif;
+}
+ .vega-bindings label {
+    font-family: 'Courier New', sans-serif;
+    font-size: 12px;
+    color: #7a528d;
+	margin-left: 10%;
+  }
+
+  .vega-bindings select {
+    font-family: 'Courier New', sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 3px;
+	border-width: 1px;
+	color: #7a528d;
+	margin-top: 1%;
+  }
