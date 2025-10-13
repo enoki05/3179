@@ -1,0 +1,25 @@
+#choropleth_map {
+	top:100px;
+	bottom: 100px; 
+	left: 100px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
+div.vl-tooltip {
+    text-align: left !important;
+}
+h2, h4 {
+	text-align: center;
+}
+body {
+	font-family: 'DejaVu Sans Mono', sans-serif;
+	margin: 40px;
+	background-color: #d1deee;
+	color: #333;
+	align-content: center;
+}
+#employed_map {
+	margin-top: 20px;
+	margin-left: 15%;
+}
