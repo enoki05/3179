@@ -12,21 +12,23 @@
 
 </head>
 <body>
-<h2>Exploring Australian Employment</h2>
-<h4>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-qui officia deserunt mollit anim id est laborum.
-</h4>
-<div id="employed_map">
+  <div id="viz-container" style="display:flex; flex-direction:column; align-items:center; width:100%;">
+    <h2>Exploring Australian Employment</h2>
+    <h4 style="max-width:1200px; text-align:center;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+      qui officia deserunt mollit anim id est laborum.
+    </h4>
 
-<script type="text/javascript">
+    <div id="employed_map" style="width:1800px; overflow-x:auto; margin-top:20px;"></div>
+  </div>
 
-  var spec2 = "js/choropleth_map.vg.json";
-  vegaEmbed('#employed_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
-</div>
+  <script type="text/javascript">
+    var spec2 = "js/choropleth_map.vg.json";
+    vegaEmbed('#employed_map', spec2).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+  </script>
 </body>
+
 </html>
