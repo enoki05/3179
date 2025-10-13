@@ -173,7 +173,7 @@
       },
       "width": 600,
       "height": 400,
-      "title": {"text": "Recruitment Rate Over Time by Region"},
+      "title": {"text": {"signal": "'Recruitment Rate Over Time for ' + region_selection"}},
       "transform": [
         {
           "calculate": "datetime(2000 + parseInt(split(datum.Quarter, '-')[1]), indexof('  Mar  Jun  Sep  Dec', substring(datum.Quarter, 0, 3)) / 5 * 3, 1)",
@@ -355,7 +355,7 @@
       "data": {"url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Employed_By_Region.csv"},
       "width": 600,
       "height": 400,
-      "title": {"text": "Regional Labour Market Ratings Heatmap"},
+      "title": {"text": "Regional Labour Market Ratings"},
       "transform": [
         {
           "fold": [
