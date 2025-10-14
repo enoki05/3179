@@ -1,95 +1,101 @@
 * {
-      box-sizing: border-box;
-    }
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'DejaVu Sans Mono', monospace, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #d1deee;
-      color: #333;
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'DejaVu Sans Mono', monospace, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #d1deee;
+  color: #333;
+  overflow-x: hidden;
+}
 
-    #viz-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
-      width: 100%;
-    }
+#viz-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
 
-    h2 {
-      text-align: center;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      margin-bottom: 15px;
-      color: #333;
-    }
+h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 15px;
+  color: #333;
+}
 
-    h4 {
-      text-align: center;
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-      line-height: 1.6;
-      margin: 0 auto 30px;
-      max-width: 900px;
-      font-weight: normal;
-      padding: 0 15px;
-    }
+h4 {
+  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0 auto 30px;
+  max-width: 900px;
+  font-weight: normal;
+  padding: 0 15px;
+}
 
-    #employed_map {
-      width: 100%;
-      margin: 20px auto;
-      overflow-x: auto;
-      overflow-y: visible;
-    }
+#employed_map {
+  width: 100%;
+  margin: 20px auto;
+  overflow: visible;
+  position: relative;
+}
 
-    /* Make Vega visualizations responsive */
-    #employed_map .vega-embed {
-      width: 100% !important;
-      display: flex;
-      justify-content: center;
-    }
+/* Critical tooltip fixes */
+#employed_map .vega-embed {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: visible !important;
+}
 
-    #employed_map canvas {
-      max-width: 100%;
-      height: auto !important;
-    }
+#employed_map .vega-embed > div {
+  overflow: visible !important;
+}
 
-    /* Tooltip styling */
-    div.vl-tooltip {
-      text-align: left !important;
-      font-family: 'DejaVu Sans Mono', monospace;
-    }
+/* Ensure tooltips render on top and positioned correctly */
+#vg-tooltip-element {
+  position: fixed !important;
+  pointer-events: none;
+  z-index: 10000 !important;
+}
 
-    /* Responsive adjustments */
-    @media screen and (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
+.vega-bind {
+  font-family: 'DejaVu Sans Mono', monospace;
+  margin-bottom: 15px;
+}
 
-      #viz-container {
-        padding: 10px;
-      }
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
 
-      h4 {
-        font-size: 0.85rem;
-      }
-    }
+  #viz-container {
+    padding: 10px;
+  }
 
-    /* For very small screens */
-    @media screen and (max-width: 480px) {
-      body {
-        padding: 5px;
-      }
+  h4 {
+    font-size: 0.85rem;
+  }
+}
 
-      #viz-container {
-        padding: 5px;
-      }
-    }
+@media screen and (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
 
-    /* Ensure scrolling works properly on small screens */
-    @media screen and (max-width: 1300px) {
-      #employed_map {
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-      }
-    }
+  #viz-container {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #employed_map {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -11,8 +11,7 @@
       "titleFontSize": 16
     },
     "view": {
-      "stroke": "transparent",
-      "padding": {"bottom": 40}
+      "stroke": "transparent"
     },
     "style": {
       "tooltip": {
@@ -109,10 +108,10 @@
           }
         },
         {
-        "mark": {"type": "text", "align": "center", "dy": 500, "lineBreak": "\n", "fontSize": 16, "font": "DejaVu Sans Mono"},
-        "data": {"values": [{"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."}]},
-        "encoding": {"text": {"field": "text"}}
-      },
+          "mark": {"type": "text", "align": "center", "dy": 500, "lineBreak": "\n", "fontSize": 16, "font": "DejaVu Sans Mono"},
+          "data": {"values": [{"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."}]},
+          "encoding": {"text": {"field": "text"}}
+        },
         {
           "transform": [
             {
@@ -226,10 +225,10 @@
           }
         },
         {
-        "mark": {"type": "text", "align": "center", "dy": 500, "lineBreak": "\n", "fontSize": 16, "font": "DejaVu Sans Mono"},
-        "data": {"values": [{"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."}]},
-        "encoding": {"text": {"field": "text"}}
-      },
+          "mark": {"type": "text", "align": "center", "dy": 500, "lineBreak": "\n", "fontSize": 16, "font": "DejaVu Sans Mono"},
+          "data": {"values": [{"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."}]},
+          "encoding": {"text": {"field": "text"}}
+        },
         {
           "transform": [
             {"window": [{"op": "row_number", "as": "row_num"}], "sort": [{"field": "Date", "order": "ascending"}]},
@@ -288,9 +287,9 @@
           },
           "transform": [
             {
-            "calculate": "datum.properties.SA4_NAME21",
-            "as": "SA4_NAME21"
-          },
+              "calculate": "datum.properties.SA4_NAME21",
+              "as": "SA4_NAME21"
+            },
             {
               "calculate": "substring(datum.properties.SA4_CODE21, 0, 1)",
               "as": "state_code"
@@ -419,9 +418,9 @@
           "legend": {
             "title": "Rating",
             "orient": "right",
-             "direction": "vertical",
-             "titleAnchor": "end",
-              "offset": 40 
+            "direction": "vertical",
+            "titleAnchor": "end",
+            "offset": 40 
           }
         },
         "tooltip": [
