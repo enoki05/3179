@@ -60,7 +60,8 @@ h4 {
 #employed_map,
 #employed_map1,
 #employed_map2,
-#employed_map3 {
+#employed_map3,
+#employed_map4 {
   flex: 1;
   min-width: 0;
   background-color: #fff;
@@ -73,7 +74,8 @@ h4 {
 #employed_map .vega-embed,
 #employed_map1 .vega-embed,
 #employed_map2 .vega-embed,
-#employed_map3 .vega-embed {
+#employed_map3 .vega-embed ,
+#employed_map4 .vega-embed {
   width: 100% !important;
   display: block;
 }
@@ -87,7 +89,8 @@ h4 {
 #employed_map svg,
 #employed_map1 svg,
 #employed_map2 svg,
-#employed_map3 svg {
+#employed_map3 svg,
+#employed_map4 svg {
   max-width: 100%;
   height: auto;
 }
@@ -101,7 +104,8 @@ h4 {
   #employed_map,
   #employed_map1,
   #employed_map2,
-  #employed_map3 {
+  #employed_map3,
+  #employed_map4 {
     padding: 12px;
   }
 }
@@ -115,7 +119,8 @@ h4 {
   #employed_map,
   #employed_map1,
   #employed_map2,
-  #employed_map3 {
+  #employed_map3,
+  #employed_map4 {
     width: 100%;
   }
 }
@@ -150,7 +155,8 @@ h4 {
   #employed_map,
   #employed_map1,
   #employed_map2,
-  #employed_map3 {
+  #employed_map3,
+  #employed_map4 {
     padding: 10px;
   }
 }

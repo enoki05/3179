@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "width": 600,
+  "height": 400,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "title": {"text": "Applicants per Vacancy Over Time"},
+  "config": {
+    "font": "DejaVu Sans Mono",
+    "background": null,
+    "axis": {"labelFontSize": 14, "titleFontSize": 16},
+    "view": {"stroke": "transparent"},
+    "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
+  },
+  "data": {
+    "values": [
+      {"Year": "2021", "Total applicants per vacancy": 13.5, "Qualified applicants per vacancy": 6.6, "Suitable applicants per vacancy": 2.9},
+      {"Year": "2022", "Total applicants per vacancy": 13.6, "Qualified applicants per vacancy": 5.0, "Suitable applicants per vacancy": 2.3},
+      {"Year": "2023", "Total applicants per vacancy": 16.0, "Qualified applicants per vacancy": 5.6, "Suitable applicants per vacancy": 2.6},
+      {"Year": "2024", "Total applicants per vacancy": 24.2, "Qualified applicants per vacancy": 7.6, "Suitable applicants per vacancy": 3.0},
+      {"Year": "2025", "Total applicants per vacancy": 27.5, "Qualified applicants per vacancy": 9.3, "Suitable applicants per vacancy": 4.3}
+    ]
+  },
+  "transform": [
+    {
+      "fold": [
+        "Total applicants per vacancy",
+        "Qualified applicants per vacancy",
+        "Suitable applicants per vacancy"
+      ],
+      "as": ["Category", "Count"]
+    }
+  ],
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "labelFontSize": 14,
+        "titleFontWeight": "bold",
+        "titleFontSize": 16,
+        "title": "Year"
+      }
+    },
+    "y": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Applicants per Vacancy",
+      "axis": {
+        "titleFontWeight": "bold",
+        "titleFontSize": 16,
+        "labelFontSize": 14,
+        "grid": true,
+        "gridColor": "#666666",
+        "gridOpacity": 0.2
+      }
+    },
+    "xOffset": {"field": "Category"},
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Total applicants per vacancy",
+          "Qualified applicants per vacancy",
+          "Suitable applicants per vacancy"
+        ],
+        "range": ["#74c476", "#238b45", "#00441b"]
+      },
+      "legend": {
+        "title": "Applicant Type",
+        "orient": "top",
+        "direction": "horizontal",
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Category", "type": "nominal", "title": "Category"},
+      {"field": "Count", "type": "quantitative", "title": "Count", "format": ".1f"}
+    ]
+  }
+}
