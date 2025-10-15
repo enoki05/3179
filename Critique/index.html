@@ -19,15 +19,53 @@
       aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
       qui officia deserunt mollit anim id est laborum.(MIGHT TAKE A COUPLE OF SECONDS TO LOAD. SELECTING AREAS OF MAP SHOULD FILTER THE STATE/TERRITORY OF HEATMAP)
     </h4>
-
+    <div>
+      <div class="inner-cont">
     <div id="employed_map"></div>
+    <div id="employed_map1"></div>
+    </div>
+      <div class="inner-cont">
+    <div id="employed_map2"></div>
+
+    <div id="employed_map3"></div>
+    </div>
+    </div>
   </div>
 
   <script type="text/javascript">
+    var spec1 = "js/first.vg.json";
     var spec2 = "js/choropleth_map.vg.json";
+    var spec3 = "js/second.vg.json";
+    var spec4 = "js/third.vg.json";
     vegaEmbed('#employed_map', spec2).then(function(result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
+      vegaEmbed('#employed_map1', spec1).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+    vegaEmbed('#employed_map2', spec3).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+    vegaEmbed('#employed_map3', spec4).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+    let mapView, heatmapView;
+
+    vegaEmbed('#employed_map', "js/choropleth_map.vg.json").then(res => {
+      mapView = res.view;
+
+      // listen for map clicks
+      mapView.addSignalListener("state_click", (name, value) => {
+        if (heatmapView) {
+          heatmapView.signal("state_click", value).run();
+        }
+      });
+    });
+
+    vegaEmbed('#employed_map1', "js/first.vg.json").then(res => {
+      heatmapView = res.view;
+    });
+
   </script>
 </body>
 

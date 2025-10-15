@@ -1,0 +1,144 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"background": null,
+"width": "container",
+  "height": "container",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "DejaVu Sans Mono",
+    "axis": {
+      "labelFontWeight": "normal",
+      "titleFontWeight": "normal",
+      "labelFontSize": 14,
+      "titleFontSize": 16
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "style": {
+      "tooltip": {
+        "font": "DejaVu Sans Mono",
+        "fontSize": 12,
+        "fontWeight": "normal"
+      }
+    },
+    "title": {
+      "fontSize": 18,
+      "fontWeight": "bold",
+      "font": "DejaVu Sans Mono"
+    }
+  },
+  "params": [
+    {
+      "name": "region_selection",
+      "value": "Australian Capital Territory",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Australian Capital Territory", "New South Wales", "Victoria", 
+          "Queensland", "South Australia", "Western Australia", 
+          "Tasmania", "Northern Territory"
+        ],
+        "name": "Filter Recruitment Chart by Region: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/area_data.csv"
+  },
+  "width": 600,
+  "height": 400,
+  "title": {"text": {"signal": "'Recruitment Rate Over Time for ' + region_selection"}},
+  "transform": [
+    {
+      "calculate": "datetime(2000 + parseInt(split(datum.Quarter, '-')[1]), indexof('  Mar  Jun  Sep  Dec', substring(datum.Quarter, 0, 3)) / 5 * 3, 1)",
+      "as": "Date"
+    },
+    {
+      "fold": [
+        "New South Wales", "Victoria", "Queensland", "South Australia",
+        "Western Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"
+      ],
+      "as": ["Region", "value"]
+    },
+    { "filter": "datum.Region == region_selection" },
+    {
+      "calculate": "toNumber(datum.value)",
+      "as": "value_numeric"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "area", "line": true, "color": "#bae4b3"},
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "axis": {
+            "format": "%b %Y",
+            "labelAngle": -45,
+            "titlePadding": 25,
+            "titleFontWeight":"bold",
+            "titleFontSize": 16,
+            "labelFontSize": 14,
+            "grid": true,
+            "gridColor": "#666666",
+            "gridOpacity": 0.2
+          }
+        },
+        "y": {
+          "field": "value_numeric",
+          "type": "quantitative",
+          "scale": {"domain": [0, 0.8]},
+          "axis": {"tickCount": 5, "grid": false, "format": ".0%","titleFontWeight":"bold", "titleFontSize": 16, "labelFontSize": 14},
+          "title": "Recruitment Rate"
+        },
+        "tooltip": [
+          {"field": "Region", "type": "nominal", "title": "Region"},
+          {"field": "Date", "type": "temporal", "title": "Date", "format": "%b %Y"},
+          {"field": "value_numeric", "type": "quantitative", "title": "Recruitment Rate (%)", "format": ",.1%"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"window": [{"op": "row_number", "as": "row_num"}], "sort": [{"field": "Date", "order": "ascending"}]},
+        {"joinaggregate": [{"op": "max", "field": "row_num", "as": "max_row"}]},
+        {"filter": "datum.row_num == datum.max_row"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "point", "shape": "circle", "size": 50, "color": "#6082B6", "filled": true},
+          "encoding": {
+            "x": {"field": "Date", "type": "temporal"},
+            "y": {"field": "value_numeric", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": 10,
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "color": "#6082B6",
+            "yOffset": -130,
+            "font": "DejaVu Sans Mono"
+          },
+          "encoding": {
+            "x": {"field": "Date", "type": "temporal"},
+            "y": {"field": "value_numeric", "type": "quantitative"},
+            "text": {
+              "field": "value_numeric",
+              "type": "quantitative",
+              "format": ".1%"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

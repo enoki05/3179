@@ -1,0 +1,151 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"background": null,
+"width": "container",
+  "height": "container",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "DejaVu Sans Mono",
+    "axis": {
+      "labelFontWeight": "normal",
+      "titleFontWeight": "normal",
+      "labelFontSize": 14,
+      "titleFontSize": 16
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "style": {
+      "tooltip": {
+        "font": "DejaVu Sans Mono",
+        "fontSize": 12,
+        "fontWeight": "normal"
+      }
+    },
+    "title": {
+      "fontSize": 18,
+      "fontWeight": "bold",
+      "font": "DejaVu Sans Mono"
+    }
+  },
+  "params": [
+    {
+      "name": "Category",
+      "value": "Industry",
+      "bind": {
+        "input": "select",
+        "options": ["Industry", "Occupation", "State"],
+        "labels": ["Industry", "Occupation", "State"],
+        "name": "Filter Projections Chart by Category: "
+      },
+      "expr": "Category"
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/interactive_data_5.csv"
+  },
+  "title": {"text": "Employment Projections by Category"},
+  "width": 600,
+  "height": 400,
+  "transform": [
+    { "filter": "trim(datum.Category) == Category" },
+    {
+      "calculate": "toNumber(datum['2029_Projected_Count'])",
+      "as": "count_numeric"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "#238b45"},
+      "encoding": {
+        "x": {
+          "field": "Category Type",
+          "type": "nominal",
+          "title": {"signal": "Category"},
+          "axis": {
+            "labelFontSize": 14,
+            "labelAngle": -40,
+            "labelLimit": 400,
+            "labelPadding": 10,
+            "titlePadding": 35,
+            "titleFontWeight":"bold",
+            "titleFontSize": 16
+          }
+        },
+        "y": {
+          "field": "count_numeric",
+          "type": "quantitative",
+          "title": "2029 Projected Count (000s)",
+          "axis": {
+            "titleFontWeight":"bold",
+            "titleFontSize": 16,
+            "labelFontSize": 14,
+            "grid": true,
+            "gridColor": "#666666",
+            "gridOpacity": 0.2
+          }
+        },
+        "tooltip": [
+          {"field": "Category Type", "type": "nominal"},
+          {"field": "count_numeric", "type": "quantitative", "format": ",.1d","title": "2029 Projected Count (000s)"}
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "argmax", "field": "count_numeric", "as": "max_record"}
+          ]
+        },
+        {
+          "calculate": "datum.max_record['Category Type']",
+          "as": "max_category"
+        },
+        {
+          "calculate": "datum.max_record.count_numeric",
+          "as": "max_count"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "shape": "triangle-down",
+            "size": 150,
+            "color": "#238b45",
+            "yOffset": -10
+          },
+          "encoding": {
+            "x": {"field": "max_category", "type": "nominal"},
+            "y": {"field": "max_count", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "color": "#238b45",
+            "yOffset": -30,
+            "font": "DejaVu Sans Mono"
+          },
+          "encoding": {
+            "x": {"field": "max_category", "type": "nominal"},
+            "y": {"field": "max_count", "type": "quantitative"},
+            "text": {
+              "value": {
+                "expr": "datum.max_category + ' has the highest count of ' + format(datum.max_count, '.1d')"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

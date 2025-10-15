@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"background": null,
+  "width": "container",
+  "height": 600,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "title": {"text": "Regional Labour Market Ratings"},
+  "config": {
+    "font": "DejaVu Sans Mono",
+    "axis": {"labelFontSize": 14, "titleFontSize": 16},
+    "view": {"stroke": "transparent"},
+    "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Employed_By_Region.csv"
+  },
+  "params": [
+    {
+      "name": "state_click",
+      "value": {"state_code": "2"}
+    }
+  ],
+  "transform": [
+    {
+      "fold": [
+        "17/07/2003", "17/07/2004", "17/07/2005", "17/07/2006", 
+        "17/07/2007", "17/07/2008", "17/07/2009", "17/07/2010",
+        "17/07/2011", "17/07/2012", "17/07/2013", "17/07/2014",
+        "17/07/2015", "17/07/2016", "17/07/2017", "17/07/2018",
+        "17/07/2019", "17/07/2020", "17/07/2021", "17/07/2022",
+        "17/07/2023", "17/07/2024", "17/07/2025"
+      ],
+      "as": ["Year", "Rating"]
+    },
+    {
+      "calculate": "substring(datum.Year, 6, 10)",
+      "as": "YearLabel"
+    },
+    {
+      "calculate": "toNumber(datum.Rating)",
+      "as": "RatingNumeric"
+    },
+    {
+      "calculate": "substring(datum['SA4 Code'], 0, 1)",
+      "as": "state_code"
+    },
+    {
+      "filter": "state_click.state_code == datum.state_code"
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "YearLabel",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": -45,
+        "labelFontSize": 14,
+        "titleFontWeight": "bold",
+        "titleFontSize": 16
+      }
+    },
+    "y": {
+      "field": "SA4 NAME",
+      "type": "nominal",
+      "title": "Region",
+      "axis": {
+        "labelLimit": 200,
+        "labelFontSize": 14,
+        "titleFontWeight": "bold",
+        "titleFontSize": 16,
+        "titleAlign": "right",
+        "titleAngle": 0,
+        "titleX": -10,
+        "titleY": -10
+      }
+    },
+    "color": {
+      "field": "RatingNumeric",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "greens",
+        "domain": [1, 5]
+      },
+      "legend": {
+        "title": "Rating",
+        "orient": "right",
+        "direction": "vertical",
+        "titleAnchor": "end",
+        "offset": 40
+      }
+    },
+    "tooltip": [
+      {"field": "SA4 NAME", "type": "nominal", "title": "Region"},
+      {"field": "YearLabel", "type": "nominal", "title": "Year"},
+      {"field": "RatingNumeric", "type": "quantitative", "title": "Rating", "format": ".2f"}
+    ]
+  }
+}
