@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"background": null,
-"width": "container",
+  "background": null,
+  "width": "container",
   "height": "container",
   "autosize": {
     "type": "fit",
@@ -16,7 +16,7 @@
       "titleFontSize": 16
     },
     "view": {
-      "stroke": "transparent"
+      "stroke": null
     },
     "style": {
       "tooltip": {
@@ -31,6 +31,7 @@
       "font": "DejaVu Sans Mono"
     }
   },
+  "padding": {"top": 50, "bottom": 10, "left": 10, "right": 10},
   "params": [
     {
       "name": "Category",
@@ -47,9 +48,14 @@
   "data": {
     "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/interactive_data_5.csv"
   },
-  "title": {"text": "Employment Projections by Category"},
-  "width": 600,
-  "height": 400,
+  "title": {
+    "text": "Employment Projections by Category",
+    "font": "DejaVu Sans Mono",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 800,
+  "height": 500,
   "transform": [
     { "filter": "trim(datum.Category) == Category" },
     {
@@ -94,7 +100,6 @@
         ]
       }
     },
-
     {
       "transform": [
         {
@@ -140,7 +145,7 @@
             "y": {"field": "max_count", "type": "quantitative"},
             "text": {
               "value": {
-                "expr": "datum.max_category + ' has the highest count of ' + format(datum.max_count, '.1d')"
+                "expr": "datum.max_category + ' has the highest count of ' + format(datum.max_count, ',.0f') + ',000'"
               }
             }
           }

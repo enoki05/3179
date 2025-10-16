@@ -2,16 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 "background": null,
   "width": "container",
-  "height": 600,
+  "height": "container",
   "autosize": {
-    "type": "fit-x",
+    "type": "fit",
     "contains": "padding"
   },
   "title": {"text": "Regional Labour Market Ratings"},
   "config": {
     "font": "DejaVu Sans Mono",
     "axis": {"labelFontSize": 14, "titleFontSize": 16},
-    "view": {"stroke": "transparent"},
+    "view": {"stroke": null},
     "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
   },
   "data": {

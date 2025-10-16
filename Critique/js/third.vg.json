@@ -16,7 +16,7 @@
       "titleFontSize": 16
     },
     "view": {
-      "stroke": "transparent"
+      "stroke": null
     },
     "style": {
       "tooltip": {
@@ -132,9 +132,9 @@
             "x": {"field": "Date", "type": "temporal"},
             "y": {"field": "value_numeric", "type": "quantitative"},
             "text": {
-              "field": "value_numeric",
-              "type": "quantitative",
-              "format": ".1%"
+              "value": {
+                "expr": "'Current recruitment rate in ' + datum.Region + ' is ' + format(datum.value_numeric, ',.1%') + '%'"
+              }
             }
           }
         }

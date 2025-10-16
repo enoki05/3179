@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "width": 600,
+  "height": 400,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "title": {"text": "Recruitment Reasons"},
+  "config": {
+    "font": "DejaVu Sans Mono",
+    "view": {"stroke": null},
+    "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
+  },
+  "params": [
+    {
+      "name": "Year_Selection",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2020,
+        "max": 2025,
+        "step": 1,
+        "name": "Choose Year:"
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/Recruitment_Reason.csv"
+  },
+  "transform": [
+    {"calculate": "substring(datum.Year, 6, 10)", "as": "YearNumber"},
+    {"calculate": "toNumber(datum.YearNumber)", "as": "YearNumeric"},
+    {"filter": "datum.YearNumeric == Year_Selection"},
+    {
+      "fold": [
+        "Turnover Only",
+        "Both Turnover and New Position(s)",
+        "New Position(s) only "
+      ],
+      "as": ["Reason", "Percentage"]
+    },
+    {"calculate": "trim(datum.Reason)", "as": "ReasonClean"},
+    {"calculate": "trim(datum.Percentage)", "as": "PercentageTrimmed"},
+    {"calculate": "replace(datum.PercentageTrimmed, '%', '')", "as": "PercentageClean"},
+    {"calculate": "toNumber(datum.PercentageClean)", "as": "PercentageNumeric"}
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 100, 
+        "outerRadius": 180,  
+        "stroke": "#fff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "theta": {"field": "PercentageNumeric", "type": "quantitative"},
+        "color": {
+          "field": "ReasonClean",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Turnover Only",
+              "Both Turnover and New Position(s)",
+              "New Position(s) only"
+            ],
+            "range": ["#74c476", "#238b45", "#00441b"]
+          },
+          "legend": {
+            "title": "Recruitment Reason",
+            "orient": "top-right",     
+            "direction": "horizontal", 
+            "columns": 1,
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "offset": -10
+          }
+        },
+        "tooltip": [
+          {"field": "ReasonClean", "type": "nominal", "title": "Reason"},
+          {"field": "PercentageNumeric", "type": "quantitative", "title": "Percentage", "format": ".0f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 36,
+        "fontWeight": "bold",
+        "color": "#238b45"
+      },
+      "encoding": {"text": {"field": "YearNumeric"}}
+    }
+  ]
+}

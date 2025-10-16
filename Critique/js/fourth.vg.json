@@ -12,7 +12,7 @@
     "font": "DejaVu Sans Mono",
     "background": null,
     "axis": {"labelFontSize": 14, "titleFontSize": 16},
-    "view": {"stroke": "transparent"},
+    "view": {"stroke": null},
     "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
   },
   "data": {

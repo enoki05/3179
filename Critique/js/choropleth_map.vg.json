@@ -17,7 +17,7 @@
       "titleFontSize": 16
     },
     "view": {
-      "stroke": "transparent"
+      "stroke": null
     },
     "style": {
       "tooltip": {
