@@ -1,14 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
-  "width": 700,
-  "height": 550,
-  "padding": {"left": 5, "right": 120, "top": 5, "bottom": 5},
+  "width": 600,
+  "height": 500,
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
     "axis": {
-      "labelFontSize": 16, 
-      "titleFontSize": 18, 
+      "labelFontSize": 13, 
+      "titleFontSize": 15, 
       "labelFontWeight": "normal",
       "titleFontWeight": "bold"
     },
@@ -68,9 +67,9 @@
       "title": "Year",
       "axis": {
         "labelAngle": -45,
-        "labelFontSize": 16,
+        "labelFontSize": 13,
         "titleFontWeight": "bold",
-        "titleFontSize": 18, 
+        "titleFontSize": 15, 
         "labelPadding": 5
       }
     },
@@ -79,10 +78,10 @@
       "type": "nominal",
       "title": "Region",
       "axis": {
-        "labelLimit": 180,
-        "labelFontSize": 16, 
+        "labelLimit": 200,
+        "labelFontSize": 12, 
         "titleFontWeight": "bold",
-        "titleFontSize": 18,
+        "titleFontSize": 15,
         "titleAlign": "right",
         "titleAngle": 0,
         "titleX": -5,
@@ -98,13 +97,12 @@
       },
       "legend": {
         "title": "Labour Market Rating",
-        "orient": "none",
-        "legendX": 720,
-        "legendY": 50,
+        "orient": "right",
         "direction": "vertical",
         "titleAnchor": "start",
-        "titleFontSize": 11,
-        "labelFontSize": 10
+        "titleFontSize": 12,
+        "labelFontSize": 11,
+        "offset": 10
       }
     },
     "tooltip": [
