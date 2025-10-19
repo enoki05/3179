@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
-  "padding": {"top": 20, "bottom": 20, "left": 20, "right": 150},
+  "padding": {"top": 30, "bottom": 20, "left": 20, "right": 150},
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
     "view": {"stroke": null}
@@ -9,9 +9,9 @@
   "width": 1000, 
   "height": 850,
   "title": {
-    "text": "Australian Industry Employment: Salary vs Projected Growth",
+    "text": "Australian Salary vs Projected Growth by Industry Sector",
     "anchor": "middle",
-    "fontSize": 20,
+    "fontSize": 30,
     "font": "Fira Sans Condensed, sans-serif",
     "fontWeight": "bold"
   },

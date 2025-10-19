@@ -13,6 +13,13 @@
     "view": {"stroke": null},
     "title": {"fontSize": 18, "fontWeight": "bold", "font": "Fira Sans Condensed, sans-serif"}
   },
+  "title": {
+    "text":  "Suitable vs Qualified vs Total Applicants per Vacancy (2021-2025)",
+    "anchor": "middle",
+    "fontSize": 18,
+    "font": "Fira Sans Condensed, sans-serif",
+    "fontWeight": "bold"
+  },
   "data": {
     "values": [
       {"Year": "2021", "Total applicants per vacancy": 13.5, "Qualified applicants per vacancy": 6.6, "Suitable applicants per vacancy": 2.9},
@@ -74,7 +81,7 @@
         "orient": "top",
         "direction": "horizontal",
         "titleFontSize": 14,
-        "labelFontSize": 12
+        "labelFontSize": 10
       }
     },
     "tooltip": [

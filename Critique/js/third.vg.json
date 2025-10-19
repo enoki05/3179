@@ -46,6 +46,13 @@
       }
     }
   ],
+  "title": {
+    "text": {"expr": "'Rate of Recruitment for ' + region_selection"},
+    "anchor": "middle",
+    "fontSize": 18,
+    "font": "Fira Sans Condensed, sans-serif",
+    "fontWeight": "bold"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/area_data.csv"
   },
