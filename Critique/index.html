@@ -13,8 +13,8 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Schoolbell&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Schoolbell&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,15 +29,14 @@
     <!-- Section 1 -->
     <section class="section">
       <h2 class="graph-title">📍 Recruitment Rates by Region 📍</h2>
-      <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        Select an Australian State/Territory in the dropdown to filter the recruitment rate over time.
-      </p>
-      <div class="vis-block">
-        <div id="employed_map3"></div>
+      <div class="row-layout">
+        <div class="vis-block">
+          <div id="employed_map3"></div>
+        </div>
+        <p style="text-align: left; margin-left: 20px; max-width: 500px;">
+          The recruitment data reveals significant regional variation, with the Northern Territory consistently showing the highest recruitment rates throughout the period, peaking at 0.76 in September 2022, while New South Wales maintained the lowest rates below 60%.
+        </p>
       </div>
-      <p style="text-align: center;">
-        The recruitment data reveals significant regional variation, with the Northern Territory consistently showing the highest recruitment rates throughout the period, peaking at 0.76 in September 2022, while New South Wales maintained the lowest rates below 60%.
-      </p>
     </section>
 
     <!-- Section 2 -->
@@ -51,52 +50,47 @@
       </div>
       <p style="text-align: center;">
         The amount of new positions was very high in 2020 likely due to the COVID-19 Pandemic. From then on, staff turnover grew and became a big reason for recruitment. There 
-        has also been a growth in undesireable and unexpereinced workers applying for positions compared to previous years and many more people are applying to jobs in 2025. The 
+        has also been a growth in undesirable and inexperienced workers applying for positions compared to previous years and many more people are applying to jobs in 2025. The 
         number of stages in the recruitment process has also increased over time, indicating a more rigorous hiring process by companies likely due to increased competition. 
       </p>
     </section>
 
-        <section class="section alt-section">
+    <!-- Section 3 -->
+    <section class="section alt-section">
       <h2 class="graph-title">🌍 Employment by Region & Labour Market Ratings 🌍</h2>
       <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
         Explore the map and heatmap below to view employment data by region and labour market ratings over time.
       </p>
-      
-      <!-- Choropleth Map -->
-      <div class="vis-block">
-        <div id="employed_map"></div>
+      <div class="interactive-pair">
+        <div class="vis-block">
+          <div id="employed_map"></div>
+        </div>
+        <div class="vis-block">
+          <div id="employed_map1"></div>
+        </div>
       </div>
       <p style="text-align: center;">
-        Sydney's employment landscape is dominated by the Inner South West region with 338,100 employed persons and an impressive employment-to-population ratio of 77.9%, while Melbourne's South East leads Victoria with similar strong employment metrics.
-      </p>
-      
-      <!-- Heatmap -->
-      <div class="vis-block">
-        <div id="employed_map1"></div>
-      </div>
-      <p style="text-align: center;">
-        The heatmap reveals temporal patterns in labour market performance across different regions, highlighting areas with strong and weak labour market conditions.
+        Sydney's employment landscape is dominated by the Inner South West region with 338,100 employed persons and an impressive employment-to-population ratio of 77.9%, while Melbourne's South East leads Victoria with similar strong employment metrics. The heatmap reveals temporal patterns in labour market performance across different regions, highlighting areas with strong and weak labour market conditions.
       </p>
     </section>
 
     <!-- Section 4 -->
     <section class="section alt-section">
       <h2 class="graph-title">📊 Suitability of Job Applicants 📊</h2>
-      <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        View the change in applicant suitability for a job position from 2020 to 2025
-      </p>
-      <div class="vis-block">
-        <div id="employed_map2"></div>
+      <div class="row-layout">
+        <div class="vis-block">
+          <div id="employed_map2"></div>
+        </div>
+        <p style="text-align: left; margin-left: 20px; max-width: 500px;">
+          The number of applicants has risen since 2020 indicating stronger competition, but the suitability of applicants has decreased. In 2025, roughly 16% of applicants are deemed suitable for a job, whereas in 2020, 22% were suitable. This indicates a growing skills mismatch in the labour market.
+        </p>
       </div>
-      <p style="text-align: center;">
-       The number of applicants has risen since 2020 indicating stronger competition, but the suitability of applicants has decreased. In 2025, roughly 16% of applicants are deemed suitable for a job, whereas in 2020, 22% were suitable. This indicates a growing skills mismatch in the labour market. 
-      </p>
     </section>
 
     <!-- Section 5 -->
     <section class="section">
       <h2 class="graph-title">🔮 2029 Projected Count and Salary of Different Jobs 🔮</h2>
-       <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
         Click on the industry dropdown to filter data by industry and explore projected job counts and salaries for 2029.
       </p>
       <div class="vis-block">
@@ -155,18 +149,7 @@
     // Load other visualizations
     vegaEmbed('#employed_map2', 'js/fourth.vg.json', embedConfig).catch(console.error);
     vegaEmbed('#employed_map3', 'js/third.vg.json', embedConfig).catch(console.error);
-    vegaEmbed('#employed_map4', 'js/sixth.vg.json', {
-  actions: {
-    export: true,
-    source: false,
-    compiled: false,
-    editor: false
-  },
-  renderer: 'svg',  // Changed from 'canvas' to 'svg'
-  tooltip: {
-    theme: 'custom'
-  }
-}).catch(console.error);
+    vegaEmbed('#employed_map4', 'js/sixth.vg.json', embedConfig).catch(console.error);
     vegaEmbed('#employed_map5', 'js/fifth.vg.json', embedConfig).catch(console.error);
   </script>
 </body>

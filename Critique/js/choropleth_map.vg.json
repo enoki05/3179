@@ -99,7 +99,7 @@
             "values": [0, 0.25, 0.5, 0.75, 1],
             "format": ".1f",
             "orient": "none",
-            "legendX": 850,
+            "legendX": 650,
             "legendY": 50,
             "direction": "vertical",
             "labelExpr": "60 + datum.value * 15"

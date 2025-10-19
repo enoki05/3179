@@ -81,6 +81,20 @@
     .alt-section {
       background-color: #eaf7ff;
     }
+    .row-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* Add spacing between graph and text */
+}
+
+.row-layout .vis-block {
+  flex: 1; /* Make the graph take up equal space */
+}
+
+.row-layout p {
+  flex: 1; /* Make the text take up equal space */
+}
     #employed_map1 {
   width: 100%;
   display: flex;
