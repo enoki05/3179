@@ -8,6 +8,13 @@
     "type": "fit",
     "contains": "padding"
   },
+  "title": {
+    "text":  "Employment Rate by Region in Australia",
+    "anchor": "middle",
+    "fontSize": 18,
+    "font": "Fira Sans Condensed, sans-serif",
+    "fontWeight": "bold"
+  },
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
     "axis": {
@@ -99,10 +106,13 @@
             "values": [0, 0.25, 0.5, 0.75, 1],
             "format": ".1f",
             "orient": "none",
-            "legendX": 650,
-            "legendY": 50,
+            "legendX": 580,
+            "legendY": -20,
             "direction": "vertical",
-            "labelExpr": "60 + datum.value * 15"
+            "labelExpr": "60 + datum.value * 15",
+            "labelFontSize": 12,
+            "titleFontSize": 13
+
           }
         },
         "tooltip": [

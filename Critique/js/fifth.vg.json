@@ -18,6 +18,9 @@
       }
     }
   ],
+  "spacing": 80,
+  "align": "center",
+  "center": true,
   "hconcat": [
     {
       "vconcat": [
@@ -34,18 +37,19 @@
             {"filter": "datum.YearNumeric == Year_Selection"},
             {
               "fold": [
-                "Turnover Only",
-                "Both Turnover and New Position(s)",
-                "New Position(s) only "
-              ],
+  "Turnover Only",
+  "Both Turnover and New Position(s)",
+  "New Position(s) only ",
+  "New Position(s) only"
+],
               "as": ["Reason", "Percentage"]
             },
             {"calculate": "trim(datum.Reason)", "as": "ReasonClean"},
-            {"calculate": "trim(datum.Percentage)", "as": "PercentageTrimmed"},
-            {"calculate": "replace(datum.PercentageTrimmed, '%', '')", "as": "PercentageClean"},
+            {"calculate": "replace(replace(trim(datum.Percentage), '%', ''), ',', '.')", "as": "PercentageClean"},
             {"calculate": "toNumber(datum.PercentageClean)", "as": "PercentageNumeric"},
+            {"filter": "isValid(datum.PercentageNumeric)"},
             {
-              "calculate": "datum.ReasonClean == 'Turnover Only' ? '#a1d99b' : datum.ReasonClean == 'Both Turnover and New Position(s)' ? '#31a354' : '#006d2c'",
+              "calculate": "datum.ReasonClean == 'Turnover Only' ? '#74c476' : (datum.ReasonClean == 'Both Turnover and New Position(s)' ? '#238b45' : '#00441b')",
               "as": "ReasonColor"
             }
           ],
@@ -83,20 +87,26 @@
                 "baseline": "middle",
                 "fontSize": 28,
                 "fontWeight": "bold",
-                "color": "#31a354"
+                "color": "#238b45"
               },
-              "encoding": {"text": {"field": "YearNumeric"}}
+              "encoding": {"text": {"value": {"expr": "Year_Selection"}}}
             }
           ]
         },
         {
           "width": 300,
-          "height": 120,
+          "title": {
+            "text": "Reason for Recruiting",
+            "anchor": "middle",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "offset": 15
+          },
           "data": {
             "values": [
-              {"label": "Turnover Only", "color": "#a1d99b", "order": 0},
-              {"label": "Both Turnover and New Position(s)", "color": "#31a354", "order": 1},
-              {"label": "New Position(s) only", "color": "#006d2c", "order": 2}
+              {"label": "Turnover Only", "color": "#74c476", "order": 0},
+              {"label": "Both Turnover and New Position(s)", "color": "#238b45", "order": 1},
+              {"label": "New Position(s) only", "color": "#00441b", "order": 2}
             ]
           },
           "encoding": {
@@ -111,14 +121,14 @@
             {
               "mark": {"type": "point", "filled": true, "size": 200},
               "encoding": {
-                "x": {"value": 60},
+                "x": {"value": 50},
                 "color": {"field": "color", "type": "nominal", "scale": null, "legend": null}
               }
             },
             {
               "mark": {"type": "text", "align": "left", "fontSize": 11},
               "encoding": {
-                "x": {"value": 75},
+                "x": {"value": 65},
                 "text": {"field": "label", "type": "nominal"}
               }
             }
@@ -151,7 +161,7 @@
             },
             {"calculate": "toNumber(datum.Percentage)", "as": "PercentageNumeric"},
             {
-              "calculate": "datum.Difficulty == 'Lack of suitable applicants' ? '#c6dbef' : datum.Difficulty == 'Undesirable working conditions' ? '#9ecae1' : datum.Difficulty == 'Applicants lack experience' ? '#6baed6' : datum.Difficulty == 'Applicants lacked technical skills' ? '#4292c6' : datum.Difficulty == 'Lack of applicants' ? '#2171b5' : '#084594'",
+              "calculate": "datum.Difficulty == 'Lack of suitable applicants' ? '#e3e6e8' : (datum.Difficulty == 'Undesirable working conditions' ? '#d4ecfc' : (datum.Difficulty == 'Applicants lack experience' ? '#5a8cad' : (datum.Difficulty == 'Applicants lacked technical skills' ? '#0d2a3d' : (datum.Difficulty == 'Lack of applicants' ? '#08306b' : '#02121c'))))",
               "as": "DifficultyColor"
             }
           ],
@@ -191,21 +201,27 @@
                 "fontWeight": "bold",
                 "color": "#2171b5"
               },
-              "encoding": {"text": {"field": "YearNumeric"}}
+              "encoding": {"text": {"value": {"expr": "Year_Selection"}}}
             }
           ]
         },
         {
           "width": 300,
-          "height": 140,
+          "title": {
+            "text": "Recruitment Difficulties",
+            "anchor": "middle",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "offset": 15
+          },
           "data": {
             "values": [
-              {"label": "Lack of suitable applicants", "color": "#c6dbef", "order": 0},
-              {"label": "Undesirable working conditions", "color": "#9ecae1", "order": 1},
-              {"label": "Applicants lack experience", "color": "#6baed6", "order": 2},
-              {"label": "Applicants lacked technical skills", "color": "#4292c6", "order": 3},
-              {"label": "Lack of applicants", "color": "#2171b5", "order": 4},
-              {"label": "Other reasons", "color": "#084594", "order": 5}
+              {"label": "Lack of suitable applicants", "color": "#e3e6e8", "order": 0},
+              {"label": "Undesirable working conditions", "color": "#d4ecfc", "order": 1},
+              {"label": "Applicants lack experience", "color": "#5a8cad", "order": 2},
+              {"label": "Applicants lacked technical skills", "color": "#294f69", "order": 3},
+              {"label": "Lack of applicants", "color": "#0d2a3d", "order": 4},
+              {"label": "Other reasons", "color": "#02121c", "order": 5}
             ]
           },
           "encoding": {
@@ -257,7 +273,7 @@
             },
             {"calculate": "toNumber(datum.Percentage)", "as": "PercentageNumeric"},
             {
-              "calculate": "datum.Stages == '1-2 Stages' ? '#c6b3d9' : datum.Stages == '3-4 Stages' ? '#8b5fbf' : '#6a1b9a'",
+              "calculate": "datum.Stages == '1-2 Stages' ? '#d4b9da' : (datum.Stages == '3-4 Stages' ? '#9e3b9a' : '#67001f')",
               "as": "StagesColor"
             }
           ],
@@ -295,20 +311,26 @@
                 "baseline": "middle",
                 "fontSize": 28,
                 "fontWeight": "bold",
-                "color": "#8b5fbf"
+                "color": "#9e3b9a"
               },
-              "encoding": {"text": {"field": "YearNumeric"}}
+              "encoding": {"text": {"value": {"expr": "Year_Selection"}}}
             }
           ]
         },
         {
           "width": 300,
-          "height": 120,
+          "title": {
+            "text": "Number of Recruitment Stages",
+            "anchor": "middle",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "offset": 15
+          },
           "data": {
             "values": [
-              {"label": "1-2 Stages", "color": "#c6b3d9", "order": 0},
-              {"label": "3-4 Stages", "color": "#8b5fbf", "order": 1},
-              {"label": "5+ Stages", "color": "#6a1b9a", "order": 2}
+              {"label": "1-2 Stages", "color": "#d4b9da", "order": 0},
+              {"label": "3-4 Stages", "color": "#9e3b9a", "order": 1},
+              {"label": "5+ Stages", "color": "#67001f", "order": 2}
             ]
           },
           "encoding": {
@@ -323,14 +345,14 @@
             {
               "mark": {"type": "point", "filled": true, "size": 200},
               "encoding": {
-                "x": {"value": 85},
+                "x": {"value": 65},
                 "color": {"field": "color", "type": "nominal", "scale": null, "legend": null}
               }
             },
             {
               "mark": {"type": "text", "align": "left", "fontSize": 11},
               "encoding": {
-                "x": {"value": 100},
+                "x": {"value": 80},
                 "text": {"field": "label", "type": "nominal"}
               }
             }

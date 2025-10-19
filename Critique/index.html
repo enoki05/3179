@@ -72,8 +72,7 @@
         </div>
       </div>
       <p style="text-align: center;">
-        Sydney's employment landscape is dominated by the Inner South West region with 338,100 employed persons and an impressive employment-to-population ratio of 77.9%, while Melbourne's South East leads Victoria with similar strong employment metrics. The heatmap reveals temporal patterns in labour market performance across different regions, highlighting areas with strong and weak labour market conditions.
-      </p>
+Majority of the inner areas of Australia do not have many residents nor businesses (dessert land), hence the outskirts of Australia have greater employment rates.      </p>
     </section>
 
     <!-- Section 4 -->
@@ -111,50 +110,67 @@
   </footer>
 
   <script type="text/javascript">
-    // Store views for interactive filtering
-    let mapView, heatmapView;
+  // Store views for interactive filtering
+  let mapView, heatmapView;
 
-    // Embed configuration
-    const embedConfig = {
-      actions: {
-        export: true,
-        source: false,
-        compiled: false,
-        editor: false
-      },
-      renderer: 'canvas',
-      tooltip: true
-    };
+  // Embed configuration for SVG (for better tooltips)
+  const embedConfigSVG = {
+    actions: {
+      export: true,
+      source: false,
+      compiled: false,
+      editor: false
+    },
+    renderer: 'svg',
+    tooltip: {
+      theme: 'custom'
+    }
+  };
 
-    // Load map
-    vegaEmbed('#employed_map', 'js/choropleth_map.vg.json', embedConfig)
-      .then(result => {
-        mapView = result.view;
-        if (heatmapView) {
-          mapView.addSignalListener('state_click', (name, value) => {
-            heatmapView.signal('state_click', value).run();
-          });
-        }
-      })
-      .catch(console.error);
+  // Embed configuration for Canvas (default)
+  const embedConfigCanvas = {
+    actions: {
+      export: true,
+      source: false,
+      compiled: false,
+      editor: false
+    },
+    renderer: 'canvas',
+    tooltip: true
+  };
 
-    // Load heatmap
-    vegaEmbed('#employed_map1', 'js/first.vg.json', embedConfig)
-      .then(result => {
-        heatmapView = result.view;
-        if (mapView) {
-          mapView.addSignalListener('state_click', (name, value) => {
-            heatmapView.signal('state_click', value).run();
-          });
-        }
-      })
-      .catch(console.error);
+  // Load map with SVG renderer and set up interactivity
+  vegaEmbed('#employed_map', 'js/choropleth_map.vg.json', embedConfigSVG)
+    .then(result => {
+      mapView = result.view;
+      if (heatmapView) {
+        mapView.addSignalListener('state_click', (name, value) => {
+          heatmapView.signal('state_click', value).run();
+        });
+      }
+    })
+    .catch(console.error);
 
-    // Load other visualizations
-    vegaEmbed('#employed_map2', 'js/fourth.vg.json', embedConfig).catch(console.error);
-    vegaEmbed('#employed_map3', 'js/third.vg.json', embedConfig).catch(console.error);
-    vegaEmbed('#employed_map4', 'js/sixth.vg.json', embedConfig).catch(console.error);
-    vegaEmbed('#employed_map5', 'js/fifth.vg.json', embedConfig).catch(console.error);
-  </script>
+  // Load heatmap and set up interactivity
+  vegaEmbed('#employed_map1', 'js/first.vg.json', embedConfigCanvas)
+    .then(result => {
+      heatmapView = result.view;
+      if (mapView) {
+        mapView.addSignalListener('state_click', (name, value) => {
+          heatmapView.signal('state_click', value).run();
+        });
+      }
+    })
+    .catch(console.error);
+
+  // Load other visualizations
+  vegaEmbed('#employed_map2', 'js/fourth.vg.json', embedConfigCanvas).catch(console.error);
+  vegaEmbed('#employed_map3', 'js/third.vg.json', embedConfigCanvas).catch(console.error);
+  
+  // Load bubble chart with SVG renderer for better tooltips
+  vegaEmbed('#employed_map4', 'js/sixth.vg.json', embedConfigSVG).catch(console.error);
+  
+  vegaEmbed('#employed_map5', 'js/fifth.vg.json', embedConfigCanvas).catch(console.error);
+</script>
 </body>
 </html>

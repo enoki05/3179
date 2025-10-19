@@ -211,7 +211,11 @@
 #employed_map4,
 #employed_map4 .vega-embed,
 #employed_map4 canvas,
-#employed_map4 svg {
+#employed_map4 svg,
+#employed_map,
+#employed_map .vega-embed,
+#employed_map canvas,
+#employed_map svg {
   transform: none !important;
 }
 
