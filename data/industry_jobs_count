@@ -1,0 +1,95 @@
+Class,Sub-Industry,Jobs
+Agriculture,"Agriculture, Forestry and Fishing",257.0
+Agriculture,"Nursery and Floriculture Production",13.2
+Agriculture,"Mushroom and Vegetable Growing",15.7
+Agriculture,"Fruit and Tree Nut Growing",28.3
+Agriculture,"Sheep, Beef Cattle and Grain Farming",117.5
+Agriculture,"Other Crop Growing",7.4
+Agriculture,"Dairy Cattle Farming",11.2
+Agriculture,"Poultry Farming",7.4
+Agriculture,"Deer Farming",0.1
+Agriculture,"Other Livestock Farming",12.4
+Agriculture,"Aquaculture",4.6
+Agriculture,"Forestry and Logging",5.9
+Agriculture,"Fishing, Hunting and Trapping",4.6
+Agriculture,"Agriculture, Forestry and Fishing Support Services",29.9
+Mining,"Coal Mining",48.8
+Mining,"Oil and Gas Extraction",22.4
+Mining,"Metal Ore Mining",129.7
+Mining,"Non-Metallic Mineral Mining and Quarrying",17.6
+Mining,"Exploration and Other Mining Support Services",82.2
+Manufacturing,"Food Product Manufacturing",200.6
+Manufacturing,"Beverage and Tobacco Product Manufacturing",33.7
+Manufacturing,"Textile, Leather, Clothing and Footwear Manufacturing",30.0
+Manufacturing,"Wood Product Manufacturing",34.5
+Manufacturing,"Pulp, Paper and Converted Paper Product Manufacturing",15.9
+Manufacturing,"Printing (including the Reproduction of Recorded Media)",24.6
+Manufacturing,"Petroleum and Coal Product Manufacturing",5.8
+Manufacturing,"Basic Chemical and Chemical Product Manufacturing",52.7
+Manufacturing,"Polymer Product and Rubber Product Manufacturing",23.6
+Manufacturing,"Non-Metallic Mineral Product Manufacturing",31.9
+Manufacturing,"Primary Metal and Metal Product Manufacturing",63.8
+Manufacturing,"Fabricated Metal Product Manufacturing",76.2
+Manufacturing,"Transport Equipment Manufacturing",69.8
+Manufacturing,"Machinery and Equipment Manufacturing",120.7
+Manufacturing,"Furniture and Other Manufacturing",83.0
+Electricity,"Electricity Supply",102.1
+Electricity,"Gas Supply",13.7
+Electricity,"Water Supply, Sewerage and Drainage Services",38.8
+Electricity,"Waste Collection, Treatment and Disposal Services",49.1
+Construction,"Building Construction",380.8
+Construction,"Heavy and Civil Engineering Construction",125.5
+Construction,"Construction Services",852.3
+Wholesale,"Basic Material Wholesaling",89.0
+Wholesale,"Machinery and Equipment Wholesaling",89.8
+Wholesale,"Motor Vehicle and Motor Vehicle Parts Wholesaling",24.8
+Wholesale,"Grocery, Liquor and Tobacco Product Wholesaling",58.6
+Wholesale,"Other Goods Wholesaling",80.7
+Wholesale,"Commission-Based Wholesaling",7.4
+Retail,"Motor Vehicle and Motor Vehicle Parts Retailing",97.7
+Retail,"Fuel Retailing",39.1
+Retail,"Food Retailing",429.3
+Retail,"Other Store-Based Retailing",741.0
+Retail,"Non-Store Retailing and Retail Commission-Based Buying and/or Selling",29.5
+Accommodation,"Accommodation",105.0
+Accommodation,"Food and Beverage Services",856.6
+Transport,"Road Transport",300.5
+Transport,"Rail Transport",50.0
+Transport,"Water Transport",9.7
+Transport,"Air and Space Transport",49.6
+Transport,"Other Transport",8.6
+Transport,"Postal and Courier Pick-up and Delivery Services",102.5
+Transport,"Transport Support Services",113.6
+Transport,"Warehousing and Storage Services",110.6
+Information,"Publishing (except Internet and Music Publishing)",18.0
+Information,"Motion Picture and Sound Recording Activities",37.7
+Information,"Broadcasting (except Internet)",28.4
+Information,"Internet Publishing and Broadcasting",2.7
+Information,"Telecommunications Services",70.1
+Information,"Internet Service Providers, Web Search Portals and Data Processing Services",8.8
+Information,"Library and Other Information Services",17.4
+Financial,"Finance",226.3
+Financial,"Insurance and Superannuation Funds",133.1
+Financial,"Auxiliary Finance and Insurance Services",197.6
+Rental,"Rental and Hiring Services (except Real Estate)",39.5
+Rental,"Property Operators and Real Estate Services",190.5
+Professional,"Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",1020.8
+Professional,"Computer System Design and Related Services",356.8
+Administrative,"Administrative Services",200.0
+Administrative,"Building Cleaning, Pest Control and Other Support Services",230.4
+Public,"Public Administration",675.6
+Public,"Defence",48.0
+Public,"Public Order, Safety and Regulatory Services",265.3
+Education,"Preschool and School Education",762.5
+Education,"Tertiary Education",271.5
+Education,"Adult, Community and Other Education",250.0
+Health,"Hospitals",627.3
+Health,"Medical and Other Health Care Services",725.5
+Health,"Residential Care Services",279.0
+Health,"Social Assistance Services",723.4
+Arts,"Heritage Activities",39.6
+Arts,"Creative and Performing Arts Activities",54.0
+Arts,"Sports and Recreation Activities",151.7
+Arts,"Gambling Activities",27.2
+Other,"Repair and Maintenance",253.0
+Other,"Personal and Other Services",299.4

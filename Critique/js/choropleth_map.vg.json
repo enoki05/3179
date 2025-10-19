@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "projection": {"type": "mercator"},
   "background": null,
-  "width": 600,
-  "height": 600,
+  "width": 800, 
+  "height": 600, 
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -18,7 +18,8 @@
       "titleFontSize": 16
     },
     "view": {
-      "stroke": null
+      "stroke": null,
+      "align": "center" 
     },
     "style": {
       "tooltip": {
@@ -33,91 +34,84 @@
       "font": "DejaVu Sans Mono"
     }
   },
-  "spacing": 60,
   "center": true,
-  "columns": 2,
-    
-      "width": 600,
-      "height": 400,
-
-      "layer": [
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%209%20HW/output.json",
+        "format": {"type": "topojson", "feature": "ne_50m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "stroke": "gray", "strokeWidth": 0.5, "fill": null}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%209%20HW/SA4_2021_AUST_GDA2020%20(1).json",
+        "format": {"type": "topojson", "feature": "SA4_2021_AUST_GDA2020"}
+      },
+      "transform": [
         {
-          "data": {
-            "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%209%20HW/output.json",
-            "format": {"type": "topojson", "feature": "ne_50m_graticules_5"}
-          },
-          "mark": {"type": "geoshape", "stroke": "gray", "strokeWidth": 0.5, "fill": null}
+          "calculate": "datum.properties.SA4_NAME21",
+          "as": "SA4_NAME21"
         },
         {
-          "data": {
-            "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%209%20HW/SA4_2021_AUST_GDA2020%20(1).json",
-            "format": {"type": "topojson", "feature": "SA4_2021_AUST_GDA2020"}
-          },
-          "transform": [
-            {
-              "calculate": "datum.properties.SA4_NAME21",
-              "as": "SA4_NAME21"
+          "calculate": "substring(datum.properties.SA4_CODE21, 0, 1)",
+          "as": "state_code"
+        },
+        {
+          "lookup": "properties.SA4_NAME21",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Employed_By_Region.csv"
             },
-            {
-              "calculate": "substring(datum.properties.SA4_CODE21, 0, 1)",
-              "as": "state_code"
-            },
-            {
-              "lookup": "properties.SA4_NAME21",
-              "from": {
-                "data": {
-                  "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Employed_By_Region.csv"
-                },
-                "key": "SA4 NAME",
-                "fields": ["Employed", "Working Age Population"]
-              }
-            },
-            {
-              "calculate": "datum.Employed / datum['Working Age Population'] * 100",
-              "as": "Employment Rate Percent"
-            },
-            {
-              "calculate": "(datum['Employment Rate Percent'] - 60) / (75 - 60)",
-              "as": "Employment Rate Normalized"
-            },
-            {
-              "calculate": "round(datum['Employment Rate Percent'] * 100) / 100 + '%'",
-              "as": "Employment Rate"
-            }
-          ],
-          "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.2},
-          "params": [{
-            "name": "state_click",
-            "select": {"type": "point", "fields": ["state_code"]},
-            "value": [{"state_code": "1"}]
-          }],
-          "encoding": {
-            "color": {
-              "field": "Employment Rate Normalized",
-              "type": "quantitative",
-              "scale": {
-                "type": "threshold",
-                "domain": [0.25, 0.5, 0.75],
-                "range": ["#edf8e9", "#bae4b3", "#74c476", "#238b45"]
-              },
-              "legend": {
-                "title": "Employment Rate (%)",
-                "values": [0, 0.25, 0.5, 0.75, 1],
-                "format": ".1f",
-                "orient": "right",
-                "offset": 40,
-                "direction": "vertical",
-                "labelExpr": "60 + datum.value * 15"
-              }
-            },
-            "tooltip": [
-              {"field": "properties.SA4_NAME21", "type": "nominal", "title": "Region"},
-              {"field": "Employment Rate", "type": "nominal"}
-            ]
+            "key": "SA4 NAME",
+            "fields": ["Employed", "Working Age Population"]
           }
+        },
+        {
+          "calculate": "datum.Employed / datum['Working Age Population'] * 100",
+          "as": "Employment Rate Percent"
+        },
+        {
+          "calculate": "(datum['Employment Rate Percent'] - 60) / (75 - 60)",
+          "as": "Employment Rate Normalized"
+        },
+        {
+          "calculate": "round(datum['Employment Rate Percent'] * 100) / 100 + '%'",
+          "as": "Employment Rate"
         }
-      ]
-    
-    
-  
+      ],
+      "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.2},
+      "params": [
+        {
+          "name": "state_click",
+          "select": {"type": "point", "fields": ["state_code"]},
+          "value": [{"state_code": "1"}]
+        }
+      ],
+      "encoding": {
+        "color": {
+          "field": "Employment Rate Normalized",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [0.25, 0.5, 0.75],
+            "range": ["#edf8e9", "#bae4b3", "#74c476", "#238b45"]
+          },
+          "legend": {
+            "title": "Employment Rate (%)",
+            "values": [0, 0.25, 0.5, 0.75, 1],
+            "format": ".1f",
+            "orient": "right",
+            "offset": 40,
+            "direction": "vertical",
+            "labelExpr": "60 + datum.value * 15"
+          }
+        },
+        "tooltip": [
+          {"field": "properties.SA4_NAME21", "type": "nominal", "title": "Region"},
+          {"field": "Employment Rate", "type": "nominal"}
+        ]
+      }
+    }
+  ]
 }

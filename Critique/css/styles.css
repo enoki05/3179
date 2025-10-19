@@ -90,6 +90,7 @@
       overflow-x: auto;
       overflow-y: visible;
     }
+    
 
     .vis-block h2 {
       margin-bottom: 20px;
@@ -117,6 +118,7 @@
       max-width: 100% !important;
       height: auto !important;
     }
+    
 
     .vega-actions {
       background-color: transparent !important;
@@ -127,6 +129,19 @@
       margin-bottom: 15px;
       font-size: 0.9rem;
     }
+    .vis-block .vega-embed {
+  display: block;       /* override flex if needed */
+  margin: 0 auto;       /* center the SVG */
+  max-width: 90%;       /* optional: keep it smaller than container */
+}
+
+.vis-block .vega-embed svg,
+.vis-block .vega-embed canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto !important;
+}
 
     /* === FOOTER === */
     #footer {

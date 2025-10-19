@@ -1,14 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
-  "width": 600,
-  "height": 400,
-  "autosize": {"type": "fit", "contains": "padding"},
   "config": {
     "font": "DejaVu Sans Mono",
     "view": {"stroke": null},
     "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
   },
+  "spacing": 120,
   "params": [
     {
       "name": "Year_Selection",
@@ -22,74 +20,160 @@
       }
     }
   ],
-  "data": {
-    "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/Recruitment_Reason.csv"
-  },
-  "transform": [
-    {"calculate": "substring(datum.Year, 6, 10)", "as": "YearNumber"},
-    {"calculate": "toNumber(datum.YearNumber)", "as": "YearNumeric"},
-    {"filter": "datum.YearNumeric == Year_Selection"},
+  "hconcat": [
     {
-      "fold": [
-        "Turnover Only",
-        "Both Turnover and New Position(s)",
-        "New Position(s) only "
-      ],
-      "as": ["Reason", "Percentage"]
-    },
-    {"calculate": "trim(datum.Reason)", "as": "ReasonClean"},
-    {"calculate": "trim(datum.Percentage)", "as": "PercentageTrimmed"},
-    {"calculate": "replace(datum.PercentageTrimmed, '%', '')", "as": "PercentageClean"},
-    {"calculate": "toNumber(datum.PercentageClean)", "as": "PercentageNumeric"}
-  ],
-  "layer": [
-    {
-      "mark": {
-        "type": "arc",
-        "innerRadius": 100, 
-        "outerRadius": 180,  
-        "stroke": "#fff",
-        "strokeWidth": 2
+      "width": 500,
+      "height": 400,
+      "title": {"text": "Reason for Recruiting", "anchor": "middle", "fontSize": 18},
+      "data": {
+        "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/Recruitment_Reason.csv"
       },
-      "encoding": {
-        "theta": {"field": "PercentageNumeric", "type": "quantitative"},
-        "color": {
-          "field": "ReasonClean",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Turnover Only",
-              "Both Turnover and New Position(s)",
-              "New Position(s) only"
-            ],
-            "range": ["#74c476", "#238b45", "#00441b"]
+      "transform": [
+        {"calculate": "substring(datum.Year, 6, 10)", "as": "YearNumber"},
+        {"calculate": "toNumber(datum.YearNumber)", "as": "YearNumeric"},
+        {"filter": "datum.YearNumeric == Year_Selection"},
+        {
+          "fold": [
+            "Turnover Only",
+            "Both Turnover and New Position(s)",
+            "New Position(s) only "
+          ],
+          "as": ["Reason", "Percentage"]
+        },
+        {"calculate": "trim(datum.Reason)", "as": "ReasonClean"},
+        {"calculate": "trim(datum.Percentage)", "as": "PercentageTrimmed"},
+        {"calculate": "replace(datum.PercentageTrimmed, '%', '')", "as": "PercentageClean"},
+        {"calculate": "toNumber(datum.PercentageClean)", "as": "PercentageNumeric"}
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 100,
+            "outerRadius": 180,
+            "stroke": "#fff",
+            "strokeWidth": 3
           },
-          "legend": {
-            "title": "Recruitment Reason",
-            "orient": "top-right",     
-            "direction": "horizontal", 
-            "columns": 1,
-            "labelFontSize": 12,
-            "titleFontSize": 14,
-            "offset": -10
+          "encoding": {
+            "theta": {"field": "PercentageNumeric", "type": "quantitative"},
+            "color": {
+              "field": "ReasonClean",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Turnover Only",
+                  "Both Turnover and New Position(s)",
+                  "New Position(s) only"
+                ],
+                "range": ["#74c476", "#238b45", "#00441b"]
+              },
+              "legend": {
+                "title": "Recruitment Reason",
+                "orient": "bottom",
+                "direction": "vertical",
+                "labelFontSize": 12,
+                "titleFontSize": 13,
+                "offset": 20,
+                "symbolSize": 150,
+                "labelLimit": 250
+              }
+            },
+            "tooltip": [
+              {"field": "ReasonClean", "type": "nominal", "title": "Reason"},
+              {"field": "PercentageNumeric", "type": "quantitative", "title": "Percentage (%)", "format": ".1f"}
+            ]
           }
         },
-        "tooltip": [
-          {"field": "ReasonClean", "type": "nominal", "title": "Reason"},
-          {"field": "PercentageNumeric", "type": "quantitative", "title": "Percentage", "format": ".0f"}
-        ]
-      }
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 36,
+            "fontWeight": "bold",
+            "color": "#238b45"
+          },
+          "encoding": {"text": {"field": "YearNumeric"}}
+        }
+      ]
     },
     {
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "middle",
-        "fontSize": 36,
-        "fontWeight": "bold",
-        "color": "#238b45"
+      "width": 500,
+      "height": 400,
+      "title": {"text": "Recruitment Difficulties", "anchor": "middle", "fontSize": 18},
+      "data": {
+        "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/recruitment_difficulties.csv"
       },
-      "encoding": {"text": {"field": "YearNumeric"}}
+      "transform": [
+        {"calculate": "toNumber(datum.Year)", "as": "YearNumeric"},
+        {"filter": "datum.YearNumeric == Year_Selection"},
+        {
+          "fold": [
+            "Lack of suitable applicants",
+            "Undesirable working conditions",
+            "Applicants lack experience",
+            "Applicants lacked technical skills",
+            "Lack of applicants",
+            "Other reasons"
+          ],
+          "as": ["Difficulty", "Percentage"]
+        },
+        {"calculate": "toNumber(datum.Percentage)", "as": "PercentageNumeric"}
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 100,
+            "outerRadius": 180,
+            "stroke": "#fff",
+            "strokeWidth": 3
+          },
+          "encoding": {
+            "theta": {"field": "PercentageNumeric", "type": "quantitative"},
+            "color": {
+              "field": "Difficulty",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Lack of suitable applicants",
+                  "Undesirable working conditions",
+                  "Applicants lack experience",
+                  "Applicants lacked technical skills",
+                  "Lack of applicants",
+                  "Other reasons"
+                ],
+                "range": ["#74c476", "#238b45", "#00441b", "#a1d99b", "#31a354", "#006d2c"]
+              },
+              "legend": {
+                "title": "Main Difficulty",
+                "orient": "bottom",
+                "direction": "vertical",
+                "labelFontSize": 12,
+                "titleFontSize": 13,
+                "offset": 20,
+                "symbolSize": 150,
+                "labelLimit": 250
+              }
+            },
+            "tooltip": [
+              {"field": "Difficulty", "type": "nominal", "title": "Difficulty"},
+              {"field": "PercentageNumeric", "type": "quantitative", "title": "Percentage (%)", "format": ".1f"}
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 36,
+            "fontWeight": "bold",
+            "color": "#238b45"
+          },
+          "encoding": {"text": {"field": "YearNumeric"}}
+        }
+      ]
     }
   ]
 }
