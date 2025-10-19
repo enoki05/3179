@@ -8,7 +8,7 @@
     "contains": "padding"
   },
   "config": {
-    "font": "DejaVu Sans Mono",
+    "font": "Fira Sans Condensed, sans-serif",
     "axis": {
       "labelFontWeight": "normal",
       "titleFontWeight": "normal",
@@ -20,7 +20,7 @@
     },
     "style": {
       "tooltip": {
-        "font": "DejaVu Sans Mono",
+        "font": "Fira Sans Condensed, sans-serif",
         "fontSize": 12,
         "fontWeight": "normal"
       }
@@ -28,7 +28,7 @@
     "title": {
       "fontSize": 18,
       "fontWeight": "bold",
-      "font": "DejaVu Sans Mono"
+      "font": "Fira Sans Condensed, sans-serif"
     }
   },
   "params": [
@@ -42,7 +42,7 @@
           "Queensland", "South Australia", "Western Australia", 
           "Tasmania", "Northern Territory"
         ],
-        "name": "Filter Recruitment Chart by Region: "
+        "name": "Choose Region: "
       }
     }
   ],
@@ -78,7 +78,7 @@
             "format": "%b %Y",
             "labelAngle": -45,
             "titlePadding": 25,
-            "titleFontWeight":"bold",
+            "titleFontWeight": "bold",
             "titleFontSize": 16,
             "labelFontSize": 14,
             "grid": true,
@@ -91,7 +91,7 @@
           "field": "value_numeric",
           "type": "quantitative",
           "scale": {"domain": [0, 0.8]},
-          "axis": {"tickCount": 5, "grid": false, "format": ".0%","titleFontWeight":"bold", "titleFontSize": 16, "labelFontSize": 14},
+          "axis": {"tickCount": 5, "grid": false, "format": ".0%", "titleFontWeight": "bold", "titleFontSize": 16, "labelFontSize": 14},
           "title": "Recruitment Rate"
         },
         "tooltip": [
@@ -105,7 +105,11 @@
       "transform": [
         {"window": [{"op": "row_number", "as": "row_num"}], "sort": [{"field": "Date", "order": "ascending"}]},
         {"joinaggregate": [{"op": "max", "field": "row_num", "as": "max_row"}]},
-        {"filter": "datum.row_num == datum.max_row"}
+        {"filter": "datum.row_num == datum.max_row"},
+        {
+          "calculate": "datum.Region + '\\nCurrent rate: ' + format(datum.value_numeric, '.1%')",
+          "as": "annotation_text"
+        }
       ],
       "layer": [
         {
@@ -118,24 +122,20 @@
         {
           "mark": {
             "type": "text",
-            "align": "left",
-            "dx": -5,
-            "dy": -15,
+            "align": "right",
+            "baseline": "top",
+            "dx": 50, 
+            "dy": 10, 
             "fontSize": 13,
             "fontWeight": "bold",
             "color": "#1a73e8",
-            "font": "DejaVu Sans Mono"
+            "font": "Fira Sans Condensed, sans-serif",
+            "lineBreak": "\n" 
           },
           "encoding": {
             "x": {"field": "Date", "type": "temporal"},
             "y": {"field": "value_numeric", "type": "quantitative"},
-            "text": {
-              "condition": {
-                "test": "datum.value_numeric < 0.15",
-                "value": {"expr": "'↑ ' + format(datum.value_numeric, '.1%')"}
-              },
-              "value": {"expr": "'↓ ' + format(datum.value_numeric, '.1%')"}
-            }
+            "text": {"field": "annotation_text", "type": "nominal"}
           }
         }
       ]

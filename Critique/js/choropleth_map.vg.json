@@ -10,7 +10,7 @@
     "resize": true
   },
   "config": {
-    "font": "DejaVu Sans Mono",
+    "font": "Fira Sans Condensed, sans-serif",
     "axis": {
       "labelFontWeight": "normal",
       "titleFontWeight": "normal",
@@ -23,7 +23,7 @@
     },
     "style": {
       "tooltip": {
-        "font": "DejaVu Sans Mono",
+        "font": "Fira Sans Condensed, sans-serif",
         "fontSize": 12,
         "fontWeight": "normal"
       }
@@ -31,7 +31,7 @@
     "title": {
       "fontSize": 18,
       "fontWeight": "bold",
-      "font": "DejaVu Sans Mono"
+      "font": "Fira Sans Condensed, sans-serif"
     }
   },
   "center": true,

@@ -4,7 +4,7 @@
   "width": 550,
   "height": 400,
   "config": {
-    "font": "DejaVu Sans Mono",
+    "font": "Fira Sans Condensed, sans-serif",
     "axis": {
       "labelFontSize": 11,
       "titleFontSize": 13,
@@ -16,7 +16,7 @@
     },
     "style": {
       "tooltip": {
-        "font": "DejaVu Sans Mono",
+        "font": "Fira Sans Condensed, sans-serif",
         "fontSize": 12,
         "fontWeight": "normal"
       }

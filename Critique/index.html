@@ -12,6 +12,9 @@
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Schoolbell&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,77 +26,80 @@
   </header>
 
   <main id="main-content">
-    <!-- Section 1 -->
-    <section class="section">
-      <div class="vis-block">
-        <h2>📍 Recruitment Rates by Region</h2>
-        <div id="employed_map3"></div>
-      </div>
-      <p>
-        The recruitment data reveals significant regional variation, with the Northern Territory consistently showing the highest recruitment rates throughout the period, peaking at 0.76 in September 2022, while New South Wales maintained the lowest rates below 60%.
-      </p>
-    </section>
+  <!-- Section 1 -->
+  <section class="section">
+    <h2 class="graph-title">📍 Recruitment Rates by Region 📍</h2>
+    <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      Select an Australian State/Territory in the dropdown to filter the recruitment rate over time.
+    </p>
+    <div class="vis-block">
+      <div id="employed_map3"></div>
+    </div>
+    <p style="text-align: center;">
+      The recruitment data reveals significant regional variation, with the Northern Territory consistently showing the highest recruitment rates throughout the period, peaking at 0.76 in September 2022, while New South Wales maintained the lowest rates below 60%.
+    </p>
+  </section>
 
-    <!-- Section 2 -->
-    <section class="section alt-section">
-      <div class="vis-block">
-        <h2>📈 Recruitment Composition Over Time</h2>
-        <div id="employed_map5"></div>
-      </div>
-      <p>
-        The inner areas of Australia are on the lower end of employment due to businesses being predominantly located in outer regions, leading to a higher concentration of jobs there. 
-        This trend is particularly evident in metropolitan areas where outer suburbs host a significant number of employment opportunities. 
-      </p>
-    </section>
+  <!-- Section 2 -->
+  <section class="section alt-section">
+    <h2 class="graph-title">📈 Company Recruitment Insights Over Time 📈</h2>
+     <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      Use the slider to explore company recruitment insights for the selected year.
+    </p>
+    <div class="vis-block">
+      <div id="employed_map5"></div>
+    </div>
+    <p style="text-align: center;">
+      The inner areas of Australia are on the lower end of employment due to businesses being predominantly located in outer regions, leading to a higher concentration of jobs there. 
+      This trend is particularly evident in metropolitan areas where outer suburbs host a significant number of employment opportunities. 
+    </p>
+  </section>
 
-    <!-- Section 3: Interactive Map & Heatmap -->
-    <section class="section">
-      <h2 style="text-align: center; margin-bottom: 30px;">🌍 Employment by Region & Labour Market Ratings</h2>
-      <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        Click on regions in the map below to filter the heatmap and explore regional labour market ratings over time.
-      </p>
-      
-      <div class="interactive-pair">
-        <div class="vis-block">
-          <h3>Employment Map</h3>
-          <div id="employed_map"></div>
-        </div>
-        
-        <div class="vis-block">
-          <h3>Labour Market Ratings</h3>
-          <div id="employed_map1"></div>
-        </div>
-      </div>
-      
-      <p>
-        Sydney's employment landscape is dominated by the Inner South West region with 338,100 employed persons and an impressive employment-to-population ratio of 77.9%, while Melbourne's South East leads Victoria with similar strong employment metrics. The heatmap reveals temporal patterns in labour market performance across different regions.
-      </p>
-    </section>
-
-    <!-- Section 4 -->
-    <section class="section alt-section">
+  <!-- Section 3: Interactive Map & Heatmap -->
+  <section class="section">
+    <h2 class="graph-title">🌍 Employment by Region & Labour Market Ratings 🌍</h2>
+    <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      Click on regions in the map below to filter the heatmap and explore regional labour market ratings over time.
+    </p>
+    <div class="interactive-pair">
       <div class="vis-block">
-        <h2>📊 Employment Growth Projections</h2>
-        <div id="employed_map2"></div>
+        <h3>Employment Map</h3>
+        <div id="employed_map"></div>
       </div>
-      <p>
-        Healthcare and Social Assistance is projected to become Australia's largest employer by 2029 with 2,544,500 workers, representing a 12.5% increase from 2024 and reflecting the aging population's impact on workforce demand. Electricity, Gas, Water and Waste Services is expected to see 
-        the lowest growth projections of 197,000 workers. 
-      </p>
-    </section>
-
-    <!-- Section 5 -->
-    <section class="section">
       <div class="vis-block">
-        <h2>⚖️ Job Competition and Skills Mismatch</h2>
-        <div id="employed_map4"></div>
+        <h3>Labour Market Ratings</h3>
+        <div id="employed_map1"></div>
       </div>
-      <p>
-        The labour market has experienced a dramatic shift in competition for positions, with total applicants per vacancy doubling from 13.5 in July 2021 to 27.5 in July 2025, indicating significantly increased job competition. Roughly about 16% of applicants 
-        that apply are hired in 2025.
-      </p>
-    </section>
-  </main>
+    </div>
+    <p>
+      Sydney's employment landscape is dominated by the Inner South West region with 338,100 employed persons and an impressive employment-to-population ratio of 77.9%, while Melbourne's South East leads Victoria with similar strong employment metrics. The heatmap reveals temporal patterns in labour market performance across different regions.
+    </p>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section alt-section">
+    <h2 class="graph-title">📊 Employment Growth Projections 📊</h2>
+    <div class="vis-block">
+      <div id="employed_map2"></div>
+    </div>
+    <p>
+      Healthcare and Social Assistance is projected to become Australia's largest employer by 2029 with 2,544,500 workers, representing a 12.5% increase from 2024 and reflecting the aging population's impact on workforce demand. Electricity, Gas, Water and Waste Services is expected to see 
+      the lowest growth projections of 197,000 workers. 
+    </p>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section">
+    <h2 class="graph-title">⚖️ Job Competition and Skills Mismatch ⚖️</h2>
+    <div class="vis-block">
+      <div id="employed_map4"></div>
+    </div>
+    <p>
+      The labour market has experienced a dramatic shift in competition for positions, with total applicants per vacancy doubling from 13.5 in July 2021 to 27.5 in July 2025, indicating significantly increased job competition. Roughly about 16% of applicants 
+      that apply are hired in 2025.
+    </p>
+  </section>
+</main>
 
   <footer id="footer">
     <p> By Enuki Galhindarachchi | October 2025 | Data Source: Jobs and Skills Australia</p>

@@ -8,11 +8,11 @@
     "contains": "padding"
   },
   "config": {
-    "font": "DejaVu Sans Mono",
+    "font": "Fira Sans Condensed, sans-serif",
     "background": null,
     "axis": {"labelFontSize": 14, "titleFontSize": 16},
     "view": {"stroke": null},
-    "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
+    "title": {"fontSize": 18, "fontWeight": "bold", "font": "Fira Sans Condensed, sans-serif"}
   },
   "data": {
     "values": [

@@ -2,9 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
   "config": {
-    "font": "DejaVu Sans Mono",
+    "font": "Fira Sans Condensed, sans-serif",
     "view": {"stroke": null},
-    "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
+    "title": {"fontSize": 18, "fontWeight": "bold", "font": "Fira Sans Condensed, sans-serif"}
   },
   "spacing": 120,
   "params": [

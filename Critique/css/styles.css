@@ -5,8 +5,8 @@
     }
 
     body {
-      font-family: 'DejaVu Sans Mono', monospace, sans-serif;
-      background-color: #f4f9ff;
+      font-family: "Fira Sans Condensed", sans-serif;;
+      background-color: #ddebfc;
       color: #333;
       line-height: 1.6;
       padding: 20px;
@@ -71,7 +71,7 @@
     .section {
       margin-bottom: 50px;
       padding: 30px 20px;
-      background-color: #ffffff;
+      background-color: #eaf7ff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
@@ -81,15 +81,21 @@
     }
 
     .vis-block {
-      margin: 0 auto 20px;
-      max-width: 100%;
-      padding: 20px;
-      background-color: #f8fcff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      overflow-x: auto;
-      overflow-y: visible;
-    }
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto; /* Center the visualization */
+  max-width: 100%; /* Ensure responsiveness */
+}
+.graph-title {
+  text-align: center;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px; /* Add spacing between the title and the graph */
+}
     
 
     .vis-block h2 {
@@ -125,10 +131,20 @@
     }
 
     .vega-bind {
-      font-family: 'DejaVu Sans Mono', monospace;
+      font-family: "Fira Sans Condensed, sans-serif";
       margin-bottom: 15px;
       font-size: 0.9rem;
     }
+    .vl-bindings select {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;   /* normal weight */
+  font-size: 14px;
+}
+.vl-bindings label {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;   /* optional bold for labels */
+  font-size: 14px;
+}
     .vis-block .vega-embed {
   display: block;       /* override flex if needed */
   margin: 0 auto;       /* center the SVG */
@@ -166,7 +182,7 @@
       position: fixed !important;
       pointer-events: none;
       z-index: 10000 !important;
-      font-family: 'DejaVu Sans Mono', monospace;
+      font-family: "Fira Sans Condensed", sans-serif;
     }
 
     /* === RESPONSIVE DESIGN === */
