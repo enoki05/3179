@@ -1,95 +1,95 @@
-Class,Sub-Industry,Jobs
-Agriculture,"Agriculture, Forestry and Fishing",257.0
-Agriculture,"Nursery and Floriculture Production",13.2
-Agriculture,"Mushroom and Vegetable Growing",15.7
-Agriculture,"Fruit and Tree Nut Growing",28.3
-Agriculture,"Sheep, Beef Cattle and Grain Farming",117.5
-Agriculture,"Other Crop Growing",7.4
-Agriculture,"Dairy Cattle Farming",11.2
-Agriculture,"Poultry Farming",7.4
-Agriculture,"Deer Farming",0.1
-Agriculture,"Other Livestock Farming",12.4
-Agriculture,"Aquaculture",4.6
-Agriculture,"Forestry and Logging",5.9
-Agriculture,"Fishing, Hunting and Trapping",4.6
-Agriculture,"Agriculture, Forestry and Fishing Support Services",29.9
-Mining,"Coal Mining",48.8
-Mining,"Oil and Gas Extraction",22.4
-Mining,"Metal Ore Mining",129.7
-Mining,"Non-Metallic Mineral Mining and Quarrying",17.6
-Mining,"Exploration and Other Mining Support Services",82.2
-Manufacturing,"Food Product Manufacturing",200.6
-Manufacturing,"Beverage and Tobacco Product Manufacturing",33.7
-Manufacturing,"Textile, Leather, Clothing and Footwear Manufacturing",30.0
-Manufacturing,"Wood Product Manufacturing",34.5
-Manufacturing,"Pulp, Paper and Converted Paper Product Manufacturing",15.9
-Manufacturing,"Printing (including the Reproduction of Recorded Media)",24.6
-Manufacturing,"Petroleum and Coal Product Manufacturing",5.8
-Manufacturing,"Basic Chemical and Chemical Product Manufacturing",52.7
-Manufacturing,"Polymer Product and Rubber Product Manufacturing",23.6
-Manufacturing,"Non-Metallic Mineral Product Manufacturing",31.9
-Manufacturing,"Primary Metal and Metal Product Manufacturing",63.8
-Manufacturing,"Fabricated Metal Product Manufacturing",76.2
-Manufacturing,"Transport Equipment Manufacturing",69.8
-Manufacturing,"Machinery and Equipment Manufacturing",120.7
-Manufacturing,"Furniture and Other Manufacturing",83.0
-Electricity,"Electricity Supply",102.1
-Electricity,"Gas Supply",13.7
-Electricity,"Water Supply, Sewerage and Drainage Services",38.8
-Electricity,"Waste Collection, Treatment and Disposal Services",49.1
-Construction,"Building Construction",380.8
-Construction,"Heavy and Civil Engineering Construction",125.5
-Construction,"Construction Services",852.3
-Wholesale,"Basic Material Wholesaling",89.0
-Wholesale,"Machinery and Equipment Wholesaling",89.8
-Wholesale,"Motor Vehicle and Motor Vehicle Parts Wholesaling",24.8
-Wholesale,"Grocery, Liquor and Tobacco Product Wholesaling",58.6
-Wholesale,"Other Goods Wholesaling",80.7
-Wholesale,"Commission-Based Wholesaling",7.4
-Retail,"Motor Vehicle and Motor Vehicle Parts Retailing",97.7
-Retail,"Fuel Retailing",39.1
-Retail,"Food Retailing",429.3
-Retail,"Other Store-Based Retailing",741.0
-Retail,"Non-Store Retailing and Retail Commission-Based Buying and/or Selling",29.5
-Accommodation,"Accommodation",105.0
-Accommodation,"Food and Beverage Services",856.6
-Transport,"Road Transport",300.5
-Transport,"Rail Transport",50.0
-Transport,"Water Transport",9.7
-Transport,"Air and Space Transport",49.6
-Transport,"Other Transport",8.6
-Transport,"Postal and Courier Pick-up and Delivery Services",102.5
-Transport,"Transport Support Services",113.6
-Transport,"Warehousing and Storage Services",110.6
-Information,"Publishing (except Internet and Music Publishing)",18.0
-Information,"Motion Picture and Sound Recording Activities",37.7
-Information,"Broadcasting (except Internet)",28.4
-Information,"Internet Publishing and Broadcasting",2.7
-Information,"Telecommunications Services",70.1
-Information,"Internet Service Providers, Web Search Portals and Data Processing Services",8.8
-Information,"Library and Other Information Services",17.4
-Financial,"Finance",226.3
-Financial,"Insurance and Superannuation Funds",133.1
-Financial,"Auxiliary Finance and Insurance Services",197.6
-Rental,"Rental and Hiring Services (except Real Estate)",39.5
-Rental,"Property Operators and Real Estate Services",190.5
-Professional,"Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",1020.8
-Professional,"Computer System Design and Related Services",356.8
-Administrative,"Administrative Services",200.0
-Administrative,"Building Cleaning, Pest Control and Other Support Services",230.4
-Public,"Public Administration",675.6
-Public,"Defence",48.0
-Public,"Public Order, Safety and Regulatory Services",265.3
-Education,"Preschool and School Education",762.5
-Education,"Tertiary Education",271.5
-Education,"Adult, Community and Other Education",250.0
-Health,"Hospitals",627.3
-Health,"Medical and Other Health Care Services",725.5
-Health,"Residential Care Services",279.0
-Health,"Social Assistance Services",723.4
-Arts,"Heritage Activities",39.6
-Arts,"Creative and Performing Arts Activities",54.0
-Arts,"Sports and Recreation Activities",151.7
-Arts,"Gambling Activities",27.2
-Other,"Repair and Maintenance",253.0
-Other,"Personal and Other Services",299.4
+Class,Sub-Industry,Jobs,Salary,ProjectedGrowth
+Agriculture,"Agriculture, Forestry and Fishing",257.0,65000,268.5
+Agriculture,"Nursery and Floriculture Production",13.2,58000,14.1
+Agriculture,"Mushroom and Vegetable Growing",15.7,52000,16.4
+Agriculture,"Fruit and Tree Nut Growing",28.3,55000,29.7
+Agriculture,"Sheep, Beef Cattle and Grain Farming",117.5,62000,120.8
+Agriculture,"Other Crop Growing",7.4,54000,7.7
+Agriculture,"Dairy Cattle Farming",11.2,58000,11.5
+Agriculture,"Poultry Farming",7.4,51000,7.8
+Agriculture,"Deer Farming",0.1,48000,0.1
+Agriculture,"Other Livestock Farming",12.4,56000,12.9
+Agriculture,"Aquaculture",4.6,59000,5.1
+Agriculture,"Forestry and Logging",5.9,63000,6.0
+Agriculture,"Fishing, Hunting and Trapping",4.6,54000,4.5
+Agriculture,"Agriculture, Forestry and Fishing Support Services",29.9,52000,31.2
+Mining,"Coal Mining",48.8,125000,45.2
+Mining,"Oil and Gas Extraction",22.4,135000,23.8
+Mining,"Metal Ore Mining",129.7,118000,138.5
+Mining,"Non-Metallic Mineral Mining and Quarrying",17.6,95000,18.4
+Mining,"Exploration and Other Mining Support Services",82.2,105000,88.9
+Manufacturing,"Food Product Manufacturing",200.6,68000,210.6
+Manufacturing,"Beverage and Tobacco Product Manufacturing",33.7,72000,35.1
+Manufacturing,"Textile, Leather, Clothing and Footwear Manufacturing",30.0,55000,28.5
+Manufacturing,"Wood Product Manufacturing",34.5,62000,35.9
+Manufacturing,"Pulp, Paper and Converted Paper Product Manufacturing",15.9,65000,15.5
+Manufacturing,"Printing (including the Reproduction of Recorded Media)",24.6,63000,23.8
+Manufacturing,"Petroleum and Coal Product Manufacturing",5.8,98000,5.9
+Manufacturing,"Basic Chemical and Chemical Product Manufacturing",52.7,82000,55.3
+Manufacturing,"Polymer Product and Rubber Product Manufacturing",23.6,68000,24.7
+Manufacturing,"Non-Metallic Mineral Product Manufacturing",31.9,70000,33.5
+Manufacturing,"Primary Metal and Metal Product Manufacturing",63.8,75000,66.2
+Manufacturing,"Fabricated Metal Product Manufacturing",76.2,72000,80.1
+Manufacturing,"Transport Equipment Manufacturing",69.8,78000,72.8
+Manufacturing,"Machinery and Equipment Manufacturing",120.7,76000,128.3
+Manufacturing,"Furniture and Other Manufacturing",83.0,62000,85.9
+Electricity,"Electricity Supply",102.1,115000,108.2
+Electricity,"Gas Supply",13.7,108000,14.5
+Electricity,"Water Supply, Sewerage and Drainage Services",38.8,78000,41.8
+Electricity,"Waste Collection, Treatment and Disposal Services",49.1,68000,54.5
+Construction,"Building Construction",380.8,85000,410.2
+Construction,"Heavy and Civil Engineering Construction",125.5,92000,138.1
+Construction,"Construction Services",852.3,75000,920.5
+Wholesale,"Basic Material Wholesaling",89.0,72000,92.3
+Wholesale,"Machinery and Equipment Wholesaling",89.8,76000,93.7
+Wholesale,"Motor Vehicle and Motor Vehicle Parts Wholesaling",24.8,68000,25.4
+Wholesale,"Grocery, Liquor and Tobacco Product Wholesaling",58.6,65000,61.2
+Wholesale,"Other Goods Wholesaling",80.7,70000,84.7
+Wholesale,"Commission-Based Wholesaling",7.4,62000,7.3
+Retail,"Motor Vehicle and Motor Vehicle Parts Retailing",97.7,62000,100.8
+Retail,"Fuel Retailing",39.1,58000,39.8
+Retail,"Food Retailing",429.3,55000,441.2
+Retail,"Other Store-Based Retailing",741.0,52000,755.6
+Retail,"Non-Store Retailing and Retail Commission-Based Buying and/or Selling",29.5,58000,33.4
+Accommodation,"Accommodation",105.0,52000,115.5
+Accommodation,"Food and Beverage Services",856.6,48000,927.1
+Transport,"Road Transport",300.5,68000,312.5
+Transport,"Rail Transport",50.0,82000,52.0
+Transport,"Water Transport",9.7,95000,10.1
+Transport,"Air and Space Transport",49.6,88000,54.6
+Transport,"Other Transport",8.6,65000,9.0
+Transport,"Postal and Courier Pick-up and Delivery Services",102.5,62000,105.6
+Transport,"Transport Support Services",113.6,68000,121.3
+Transport,"Warehousing and Storage Services",110.6,65000,122.7
+Information,"Publishing (except Internet and Music Publishing)",18.0,78000,17.5
+Information,"Motion Picture and Sound Recording Activities",37.7,65000,39.3
+Information,"Broadcasting (except Internet)",28.4,85000,28.1
+Information,"Internet Publishing and Broadcasting",2.7,92000,3.5
+Information,"Telecommunications Services",70.1,95000,73.6
+Information,"Internet Service Providers, Web Search Portals and Data Processing Services",8.8,105000,11.4
+Information,"Library and Other Information Services",17.4,62000,17.1
+Financial,"Finance",226.3,105000,238.6
+Financial,"Insurance and Superannuation Funds",133.1,98000,143.4
+Financial,"Auxiliary Finance and Insurance Services",197.6,88000,213.2
+Rental,"Rental and Hiring Services (except Real Estate)",39.5,65000,41.5
+Rental,"Property Operators and Real Estate Services",190.5,78000,206.3
+Professional,"Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",1020.8,95000,1122.9
+Professional,"Computer System Design and Related Services",356.8,110000,410.3
+Administrative,"Administrative Services",200.0,62000,210.0
+Administrative,"Building Cleaning, Pest Control and Other Support Services",230.4,52000,241.9
+Public,"Public Administration",675.6,88000,689.3
+Public,"Defence",48.0,95000,49.4
+Public,"Public Order, Safety and Regulatory Services",265.3,85000,276.2
+Education,"Preschool and School Education",762.5,75000,800.6
+Education,"Tertiary Education",271.5,92000,284.7
+Education,"Adult, Community and Other Education",250.0,68000,267.5
+Health,"Hospitals",627.3,82000,689.0
+Health,"Medical and Other Health Care Services",725.5,95000,826.3
+Health,"Residential Care Services",279.0,65000,320.9
+Health,"Social Assistance Services",723.4,62000,833.5
+Arts,"Heritage Activities",39.6,62000,40.6
+Arts,"Creative and Performing Arts Activities",54.0,58000,56.2
+Arts,"Sports and Recreation Activities",151.7,55000,163.8
+Arts,"Gambling Activities",27.2,62000,27.5
+Other,"Repair and Maintenance",253.0,68000,266.6
+Other,"Personal and Other Services",299.4,56000,317.4

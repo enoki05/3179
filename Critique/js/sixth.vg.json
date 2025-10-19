@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "font": "DejaVu Sans Mono",
+    "view": {"stroke": null}
+  },
+  "width": 1000,
+  "height": 650,
+  "title": {
+    "text": "Australian Industry Employment: Salary vs Projected Growth",
+    "anchor": "middle",
+    "fontSize": 20,
+    "font": "DejaVu Sans Mono",
+    "fontWeight": "bold"
+  },
+  "data": {
+    "values": "Class,Sub-Industry,Jobs,Salary,ProjectedGrowth\nAgriculture,\"Agriculture, Forestry and Fishing\",257.0,65000,268.5\nAgriculture,\"Nursery and Floriculture Production\",13.2,58000,14.1\nAgriculture,\"Mushroom and Vegetable Growing\",15.7,52000,16.4\nAgriculture,\"Fruit and Tree Nut Growing\",28.3,55000,29.7\nAgriculture,\"Sheep, Beef Cattle and Grain Farming\",117.5,62000,120.8\nAgriculture,\"Other Crop Growing\",7.4,54000,7.7\nAgriculture,\"Dairy Cattle Farming\",11.2,58000,11.5\nAgriculture,\"Poultry Farming\",7.4,51000,7.8\nAgriculture,\"Deer Farming\",0.1,48000,0.1\nAgriculture,\"Other Livestock Farming\",12.4,56000,12.9\nAgriculture,\"Aquaculture\",4.6,59000,5.1\nAgriculture,\"Forestry and Logging\",5.9,63000,6.0\nAgriculture,\"Fishing, Hunting and Trapping\",4.6,54000,4.5\nAgriculture,\"Agriculture, Forestry and Fishing Support Services\",29.9,52000,31.2\nMining,\"Coal Mining\",48.8,125000,45.2\nMining,\"Oil and Gas Extraction\",22.4,135000,23.8\nMining,\"Metal Ore Mining\",129.7,118000,138.5\nMining,\"Non-Metallic Mineral Mining and Quarrying\",17.6,95000,18.4\nMining,\"Exploration and Other Mining Support Services\",82.2,105000,88.9\nManufacturing,\"Food Product Manufacturing\",200.6,68000,210.6\nManufacturing,\"Beverage and Tobacco Product Manufacturing\",33.7,72000,35.1\nManufacturing,\"Textile, Leather, Clothing and Footwear Manufacturing\",30.0,55000,28.5\nManufacturing,\"Wood Product Manufacturing\",34.5,62000,35.9\nManufacturing,\"Pulp, Paper and Converted Paper Product Manufacturing\",15.9,65000,15.5\nManufacturing,\"Printing (including the Reproduction of Recorded Media)\",24.6,63000,23.8\nManufacturing,\"Petroleum and Coal Product Manufacturing\",5.8,98000,5.9\nManufacturing,\"Basic Chemical and Chemical Product Manufacturing\",52.7,82000,55.3\nManufacturing,\"Polymer Product and Rubber Product Manufacturing\",23.6,68000,24.7\nManufacturing,\"Non-Metallic Mineral Product Manufacturing\",31.9,70000,33.5\nManufacturing,\"Primary Metal and Metal Product Manufacturing\",63.8,75000,66.2\nManufacturing,\"Fabricated Metal Product Manufacturing\",76.2,72000,80.1\nManufacturing,\"Transport Equipment Manufacturing\",69.8,78000,72.8\nManufacturing,\"Machinery and Equipment Manufacturing\",120.7,76000,128.3\nManufacturing,\"Furniture and Other Manufacturing\",83.0,62000,85.9\nElectricity,\"Electricity Supply\",102.1,115000,108.2\nElectricity,\"Gas Supply\",13.7,108000,14.5\nElectricity,\"Water Supply, Sewerage and Drainage Services\",38.8,78000,41.8\nElectricity,\"Waste Collection, Treatment and Disposal Services\",49.1,68000,54.5\nConstruction,\"Building Construction\",380.8,85000,410.2\nConstruction,\"Heavy and Civil Engineering Construction\",125.5,92000,138.1\nConstruction,\"Construction Services\",852.3,75000,920.5\nWholesale,\"Basic Material Wholesaling\",89.0,72000,92.3\nWholesale,\"Machinery and Equipment Wholesaling\",89.8,76000,93.7\nWholesale,\"Motor Vehicle and Motor Vehicle Parts Wholesaling\",24.8,68000,25.4\nWholesale,\"Grocery, Liquor and Tobacco Product Wholesaling\",58.6,65000,61.2\nWholesale,\"Other Goods Wholesaling\",80.7,70000,84.7\nWholesale,\"Commission-Based Wholesaling\",7.4,62000,7.3\nRetail,\"Motor Vehicle and Motor Vehicle Parts Retailing\",97.7,62000,100.8\nRetail,\"Fuel Retailing\",39.1,58000,39.8\nRetail,\"Food Retailing\",429.3,55000,441.2\nRetail,\"Other Store-Based Retailing\",741.0,52000,755.6\nRetail,\"Non-Store Retailing and Retail Commission-Based Buying and/or Selling\",29.5,58000,33.4\nAccommodation,\"Accommodation\",105.0,52000,115.5\nAccommodation,\"Food and Beverage Services\",856.6,48000,927.1\nTransport,\"Road Transport\",300.5,68000,312.5\nTransport,\"Rail Transport\",50.0,82000,52.0\nTransport,\"Water Transport\",9.7,95000,10.1\nTransport,\"Air and Space Transport\",49.6,88000,54.6\nTransport,\"Other Transport\",8.6,65000,9.0\nTransport,\"Postal and Courier Pick-up and Delivery Services\",102.5,62000,105.6\nTransport,\"Transport Support Services\",113.6,68000,121.3\nTransport,\"Warehousing and Storage Services\",110.6,65000,122.7\nInformation,\"Publishing (except Internet and Music Publishing)\",18.0,78000,17.5\nInformation,\"Motion Picture and Sound Recording Activities\",37.7,65000,39.3\nInformation,\"Broadcasting (except Internet)\",28.4,85000,28.1\nInformation,\"Internet Publishing and Broadcasting\",2.7,92000,3.5\nInformation,\"Telecommunications Services\",70.1,95000,73.6\nInformation,\"Internet Service Providers, Web Search Portals and Data Processing Services\",8.8,105000,11.4\nInformation,\"Library and Other Information Services\",17.4,62000,17.1\nFinancial,\"Finance\",226.3,105000,238.6\nFinancial,\"Insurance and Superannuation Funds\",133.1,98000,143.4\nFinancial,\"Auxiliary Finance and Insurance Services\",197.6,88000,213.2\nRental,\"Rental and Hiring Services (except Real Estate)\",39.5,65000,41.5\nRental,\"Property Operators and Real Estate Services\",190.5,78000,206.3\nProfessional,\"Professional, Scientific and Technical Services (Except Computer System Design and Related Services)\",1020.8,95000,1122.9\nProfessional,\"Computer System Design and Related Services\",356.8,110000,410.3\nAdministrative,\"Administrative Services\",200.0,62000,210.0\nAdministrative,\"Building Cleaning, Pest Control and Other Support Services\",230.4,52000,241.9\nPublic,\"Public Administration\",675.6,88000,689.3\nPublic,\"Defence\",48.0,95000,49.4\nPublic,\"Public Order, Safety and Regulatory Services\",265.3,85000,276.2\nEducation,\"Preschool and School Education\",762.5,75000,800.6\nEducation,\"Tertiary Education\",271.5,92000,284.7\nEducation,\"Adult, Community and Other Education\",250.0,68000,267.5\nHealth,\"Hospitals\",627.3,82000,689.0\nHealth,\"Medical and Other Health Care Services\",725.5,95000,826.3\nHealth,\"Residential Care Services\",279.0,65000,320.9\nHealth,\"Social Assistance Services\",723.4,62000,833.5\nArts,\"Heritage Activities\",39.6,62000,40.6\nArts,\"Creative and Performing Arts Activities\",54.0,58000,56.2\nArts,\"Sports and Recreation Activities\",151.7,55000,163.8\nArts,\"Gambling Activities\",27.2,62000,27.5\nOther,\"Repair and Maintenance\",253.0,68000,266.6\nOther,\"Personal and Other Services\",299.4,56000,317.4",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"calculate": "toNumber(datum.Jobs)", "as": "JobsNumeric"},
+    {"calculate": "toNumber(datum.Salary)", "as": "SalaryNumeric"},
+    {"calculate": "toNumber(datum.ProjectedGrowth)", "as": "ProjectedGrowthNumeric"}
+  ],
+  "params": [
+    {
+      "name": "industrySelect",
+      "select": {"type": "point", "fields": ["Class"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "opacity": 0.7,
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "x": {
+      "field": "ProjectedGrowthNumeric",
+      "type": "quantitative",
+      "title": "Projected Growth (Jobs in '000)",
+      "scale": {"zero": true},
+      "axis": {
+        "labelFontSize": 11,
+        "titleFontSize": 13,
+        "grid": true,
+        "gridOpacity": 0.3
+      }
+    },
+    "y": {
+      "field": "SalaryNumeric",
+      "type": "quantitative",
+      "title": "Average Salary ($AUD)",
+      "scale": {"zero": false},
+      "axis": {
+        "labelFontSize": 11,
+        "titleFontSize": 13,
+        "grid": true,
+        "gridOpacity": 0.3,
+        "format": "$,.0f"
+      }
+    },
+    "size": {
+      "field": "JobsNumeric",
+      "type": "quantitative",
+      "title": "Current Employment ('000)",
+      "scale": {
+        "type": "sqrt",
+        "range": [50, 4000]
+      },
+      "legend": {
+        "orient": "right",
+        "labelFontSize": 10,
+        "titleFontSize": 11,
+        "format": ".0f"
+      }
+    },
+    "color": {
+      "field": "Class",
+      "type": "nominal",
+      "title": "Industry Sector",
+      "scale": {
+        "scheme": "tableau20"
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelFontSize": 10,
+        "titleFontSize": 12,
+        "symbolSize": 120,
+        "labelLimit": 180,
+        "columns": 7,
+        "offset": 5
+      }
+    },
+    "opacity": {
+      "condition": {"param": "industrySelect", "value": 0.85},
+      "value": 0.15
+    },
+    "tooltip": [
+      {"field": "Sub-Industry", "type": "nominal", "title": "Sub-Industry"},
+      {"field": "Class", "type": "nominal", "title": "Sector"},
+      {"field": "JobsNumeric", "type": "quantitative", "title": "Current Jobs ('000)", "format": ",.1f"},
+      {"field": "ProjectedGrowthNumeric", "type": "quantitative", "title": "Projected Jobs ('000)", "format": ",.1f"},
+      {"field": "SalaryNumeric", "type": "quantitative", "title": "Avg Salary", "format": "$,.0f"}
+    ]
+  }
+}
