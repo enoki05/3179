@@ -4,7 +4,6 @@
   "width": 600,
   "height": 400,
   "autosize": {"type": "fit", "contains": "padding"},
-  "title": {"text": "Recruitment Reasons"},
   "config": {
     "font": "DejaVu Sans Mono",
     "view": {"stroke": null},

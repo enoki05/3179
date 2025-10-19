@@ -48,12 +48,6 @@
   "data": {
     "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/interactive_data_5.csv"
   },
-  "title": {
-    "text": "Employment Projections by Category",
-    "font": "DejaVu Sans Mono",
-    "fontSize": 18,
-    "fontWeight": "bold"
-  },
   "width": 800,
   "height": 500,
   "transform": [

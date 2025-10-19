@@ -2,11 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "projection": {"type": "mercator"},
   "background": null,
-  "width": "container",
-  "height": "container",
+  "width": 600,
+  "height": 600,
   "autosize": {
     "type": "fit",
-    "contains": "padding"
+    "contains": "padding",
+    "resize": true
   },
   "config": {
     "font": "DejaVu Sans Mono",
@@ -38,7 +39,7 @@
     
       "width": 600,
       "height": 400,
-      "title": {"text": "Employment Rate by Region"},
+
       "layer": [
         {
           "data": {

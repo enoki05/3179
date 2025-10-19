@@ -7,7 +7,6 @@
     "type": "fit-x",
     "contains": "padding"
   },
-  "title": {"text": "Applicants per Vacancy Over Time"},
   "config": {
     "font": "DejaVu Sans Mono",
     "background": null,

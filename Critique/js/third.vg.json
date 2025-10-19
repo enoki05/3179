@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"background": null,
-"width": "container",
-  "height": "container",
+  "background": null,
+  "width": "container",
+  "height": 400,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -49,9 +49,6 @@
   "data": {
     "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Week%2010%20HW/data/area_data.csv"
   },
-  "width": 600,
-  "height": 400,
-  "title": {"text": {"signal": "'Recruitment Rate Over Time for ' + region_selection"}},
   "transform": [
     {
       "calculate": "datetime(2000 + parseInt(split(datum.Quarter, '-')[1]), indexof('  Mar  Jun  Sep  Dec', substring(datum.Quarter, 0, 3)) / 5 * 3, 1)",
@@ -87,7 +84,8 @@
             "grid": true,
             "gridColor": "#666666",
             "gridOpacity": 0.2
-          }
+          },
+          "title": "Date"
         },
         "y": {
           "field": "value_numeric",
@@ -98,8 +96,8 @@
         },
         "tooltip": [
           {"field": "Region", "type": "nominal", "title": "Region"},
-          {"field": "Date", "type": "temporal", "title": "Date", "format": "%b %Y"},
-          {"field": "value_numeric", "type": "quantitative", "title": "Recruitment Rate (%)", "format": ",.1%"}
+          {"field": "Date", "type": "temporal", "title": "Date", "format": "%B %Y"},
+          {"field": "value_numeric", "type": "quantitative", "title": "Recruitment Rate", "format": ".1%"}
         ]
       }
     },
@@ -111,7 +109,7 @@
       ],
       "layer": [
         {
-          "mark": {"type": "point", "shape": "circle", "size": 50, "color": "#6082B6", "filled": true},
+          "mark": {"type": "point", "shape": "circle", "size": 100, "color": "#1a73e8", "filled": true},
           "encoding": {
             "x": {"field": "Date", "type": "temporal"},
             "y": {"field": "value_numeric", "type": "quantitative"}
@@ -120,21 +118,23 @@
         {
           "mark": {
             "type": "text",
-            "align": "right",
-            "dx": 10,
-            "fontSize": 15,
+            "align": "left",
+            "dx": -5,
+            "dy": -15,
+            "fontSize": 13,
             "fontWeight": "bold",
-            "color": "#6082B6",
-            "yOffset": -130,
+            "color": "#1a73e8",
             "font": "DejaVu Sans Mono"
           },
           "encoding": {
             "x": {"field": "Date", "type": "temporal"},
             "y": {"field": "value_numeric", "type": "quantitative"},
             "text": {
-              "value": {
-                "expr": "'Current recruitment rate in ' + datum.Region + ' is ' + format(datum.value_numeric, ',.1%') + '%'"
-              }
+              "condition": {
+                "test": "datum.value_numeric < 0.15",
+                "value": {"expr": "'↑ ' + format(datum.value_numeric, '.1%')"}
+              },
+              "value": {"expr": "'↓ ' + format(datum.value_numeric, '.1%')"}
             }
           }
         }

@@ -1,18 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"background": null,
-  "width": "container",
-  "height": "container",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
-  "title": {"text": "Regional Labour Market Ratings"},
+  "background": null,
+  "width": 550,
+  "height": 400,
   "config": {
     "font": "DejaVu Sans Mono",
-    "axis": {"labelFontSize": 14, "titleFontSize": 16},
-    "view": {"stroke": null},
-    "title": {"fontSize": 18, "fontWeight": "bold", "font": "DejaVu Sans Mono"}
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 13,
+      "labelFontWeight": "normal",
+      "titleFontWeight": "bold"
+    },
+    "view": {
+      "stroke": null
+    },
+    "style": {
+      "tooltip": {
+        "font": "DejaVu Sans Mono",
+        "fontSize": 12,
+        "fontWeight": "normal"
+      }
+    }
   },
   "data": {
     "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/Employed_By_Region.csv"
@@ -20,17 +28,13 @@
   "params": [
     {
       "name": "state_click",
-      "value": {"state_code": "2"}
+      "value": {"state_code": "1"}
     }
   ],
   "transform": [
     {
       "fold": [
-        "17/07/2003", "17/07/2004", "17/07/2005", "17/07/2006", 
-        "17/07/2007", "17/07/2008", "17/07/2009", "17/07/2010",
-        "17/07/2011", "17/07/2012", "17/07/2013", "17/07/2014",
-        "17/07/2015", "17/07/2016", "17/07/2017", "17/07/2018",
-        "17/07/2019", "17/07/2020", "17/07/2021", "17/07/2022",
+        "17/07/2020", "17/07/2021", "17/07/2022",
         "17/07/2023", "17/07/2024", "17/07/2025"
       ],
       "as": ["Year", "Rating"]
@@ -51,7 +55,11 @@
       "filter": "state_click.state_code == datum.state_code"
     }
   ],
-  "mark": "rect",
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
   "encoding": {
     "x": {
       "field": "YearLabel",
@@ -59,9 +67,10 @@
       "title": "Year",
       "axis": {
         "labelAngle": -45,
-        "labelFontSize": 14,
+        "labelFontSize": 11,
         "titleFontWeight": "bold",
-        "titleFontSize": 16
+        "titleFontSize": 13,
+        "labelPadding": 5
       }
     },
     "y": {
@@ -69,13 +78,13 @@
       "type": "nominal",
       "title": "Region",
       "axis": {
-        "labelLimit": 200,
-        "labelFontSize": 14,
+        "labelLimit": 180,
+        "labelFontSize": 10,
         "titleFontWeight": "bold",
-        "titleFontSize": 16,
+        "titleFontSize": 13,
         "titleAlign": "right",
         "titleAngle": 0,
-        "titleX": -10,
+        "titleX": -5,
         "titleY": -10
       }
     },
@@ -87,11 +96,13 @@
         "domain": [1, 5]
       },
       "legend": {
-        "title": "Rating",
+        "title": "Labour Market Rating",
         "orient": "right",
         "direction": "vertical",
-        "titleAnchor": "end",
-        "offset": 40
+        "titleAnchor": "start",
+        "offset": 5,
+        "titleFontSize": 11,
+        "labelFontSize": 10
       }
     },
     "tooltip": [
