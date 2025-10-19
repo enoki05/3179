@@ -1,13 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
-  "width": 550,
-  "height": 400,
+  "width": 700,
+  "height": 550,
+  "padding": {"left": 5, "right": 120, "top": 5, "bottom": 5},
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
     "axis": {
-      "labelFontSize": 11,
-      "titleFontSize": 13,
+      "labelFontSize": 16, 
+      "titleFontSize": 18, 
       "labelFontWeight": "normal",
       "titleFontWeight": "bold"
     },
@@ -67,9 +68,9 @@
       "title": "Year",
       "axis": {
         "labelAngle": -45,
-        "labelFontSize": 11,
+        "labelFontSize": 16,
         "titleFontWeight": "bold",
-        "titleFontSize": 13,
+        "titleFontSize": 18, 
         "labelPadding": 5
       }
     },
@@ -79,9 +80,9 @@
       "title": "Region",
       "axis": {
         "labelLimit": 180,
-        "labelFontSize": 10,
+        "labelFontSize": 16, 
         "titleFontWeight": "bold",
-        "titleFontSize": 13,
+        "titleFontSize": 18,
         "titleAlign": "right",
         "titleAngle": 0,
         "titleX": -5,
@@ -97,10 +98,11 @@
       },
       "legend": {
         "title": "Labour Market Rating",
-        "orient": "right",
+        "orient": "none",
+        "legendX": 620,
+        "legendY": 50,
         "direction": "vertical",
         "titleAnchor": "start",
-        "offset": 5,
         "titleFontSize": 11,
         "labelFontSize": 10
       }

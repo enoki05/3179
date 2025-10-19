@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
+  "padding": {"top": 20, "bottom": 20, "left": 20, "right": 150},
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
     "view": {"stroke": null}
   },
-  "width": 1000,
-  "height": 650,
+  "width": 1000, 
+  "height": 850,
   "title": {
     "text": "Australian Industry Employment: Salary vs Projected Growth",
     "anchor": "middle",
@@ -20,18 +21,70 @@
   "transform": [
     {"calculate": "toNumber(datum.Jobs)", "as": "JobsNumeric"},
     {"calculate": "toNumber(datum.Salary)", "as": "SalaryNumeric"},
-    {"calculate": "toNumber(datum.ProjectedGrowth)", "as": "ProjectedGrowthNumeric"}
+    {"calculate": "toNumber(datum.ProjectedGrowth)", "as": "ProjectedGrowthNumeric"},
+    {"filter": "industryFilter == null || datum.Class == industryFilter"}
   ],
   "params": [
     {
       "name": "industrySelect",
       "select": {"type": "point", "fields": ["Class"]},
       "bind": "legend"
+    },
+    {
+      "name": "industryFilter",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Agriculture",
+          "Mining",
+          "Manufacturing",
+          "Electricity",
+          "Construction",
+          "Wholesale",
+          "Retail",
+          "Accommodation",
+          "Transport",
+          "Information",
+          "Financial",
+          "Rental",
+          "Professional",
+          "Administrative",
+          "Public",
+          "Education",
+          "Health",
+          "Arts",
+          "Other"
+        ],
+        "labels": [
+          "All Industries",
+          "Agriculture",
+          "Mining",
+          "Manufacturing",
+          "Electricity, Gas, Water & Waste",
+          "Construction",
+          "Wholesale Trade",
+          "Retail Trade",
+          "Accommodation & Food Services",
+          "Transport, Postal & Warehousing",
+          "Information Media & Telecommunications",
+          "Financial & Insurance Services",
+          "Rental, Hiring & Real Estate",
+          "Professional, Scientific & Technical",
+          "Administrative & Support Services",
+          "Public Administration & Safety",
+          "Education & Training",
+          "Health Care & Social Assistance",
+          "Arts & Recreation Services",
+          "Other Services"
+        ],
+        "name": "Choose Industry: "
+      }
     }
   ],
   "mark": {
     "type": "circle",
-    "opacity": 0.7,
     "stroke": "white",
     "strokeWidth": 1.5
   },
@@ -39,11 +92,11 @@
     "x": {
       "field": "ProjectedGrowthNumeric",
       "type": "quantitative",
-      "title": "Projected Growth (Jobs in '000)",
+      "title": "Projected No. of Jobs (000's)",
       "scale": {"zero": true},
       "axis": {
-        "labelFontSize": 11,
-        "titleFontSize": 13,
+        "labelFontSize": 20,
+        "titleFontSize": 25,
         "grid": true,
         "gridOpacity": 0.3
       }
@@ -54,8 +107,8 @@
       "title": "Average Salary ($AUD)",
       "scale": {"zero": false},
       "axis": {
-        "labelFontSize": 11,
-        "titleFontSize": 13,
+        "labelFontSize": 20,
+        "titleFontSize": 25,
         "grid": true,
         "gridOpacity": 0.3,
         "format": "$,.0f"
@@ -64,16 +117,19 @@
     "size": {
       "field": "JobsNumeric",
       "type": "quantitative",
-      "title": "Current Employment ('000)",
+      "title": "No. Currently Employed",
       "scale": {
         "type": "sqrt",
         "range": [50, 4000]
       },
       "legend": {
         "orient": "right",
-        "labelFontSize": 10,
-        "titleFontSize": 11,
-        "format": ".0f"
+        "labelFontSize": 15,
+        "titleFontSize": 18,
+        "format": ".0f",
+        "offset": 10,
+        "symbolSize": 120,
+        "direction": "vertical"
       }
     },
     "color": {
@@ -81,17 +137,60 @@
       "type": "nominal",
       "title": "Industry Sector",
       "scale": {
-        "scheme": "tableau20"
+        "domain": [
+          "Agriculture",
+          "Mining",
+          "Manufacturing",
+          "Electricity",
+          "Construction",
+          "Wholesale",
+          "Retail",
+          "Accommodation",
+          "Transport",
+          "Information",
+          "Financial",
+          "Rental",
+          "Professional",
+          "Administrative",
+          "Public",
+          "Education",
+          "Health",
+          "Arts",
+          "Other"
+        ],
+        "range": [
+          "#2E7D32",
+          "#43A047", 
+          "#66BB6A",
+          "#81C784",
+          "#1976D2",
+          "#42A5F5",
+          "#64B5F6",
+          "#90CAF9",
+          "#6A1B9A",
+          "#8E24AA",
+          "#AB47BC",
+          "#BA68C8",
+          "#00695C",
+          "#00897B",
+          "#26A69A",
+          "#4DB6AC",
+          "#4A148C",
+          "#7B1FA2",
+          "#9C27B0",
+          "#E1BEE7"
+        ]
       },
       "legend": {
-        "orient": "bottom",
-        "direction": "horizontal",
-        "labelFontSize": 10,
-        "titleFontSize": 12,
+        "orient": "right",
+        "direction": "vertical",
+        "labelFontSize": 15,
+        "titleFontSize": 18,
         "symbolSize": 120,
-        "labelLimit": 180,
-        "columns": 7,
-        "offset": 5
+        "labelLimit": 220,
+        "offset": 150,
+        "rowPadding": 6,
+        "columnPadding": 5
       }
     },
     "opacity": {
@@ -101,8 +200,8 @@
     "tooltip": [
       {"field": "Sub-Industry", "type": "nominal", "title": "Sub-Industry"},
       {"field": "Class", "type": "nominal", "title": "Sector"},
-      {"field": "JobsNumeric", "type": "quantitative", "title": "Current Jobs ('000)", "format": ",.1f"},
-      {"field": "ProjectedGrowthNumeric", "type": "quantitative", "title": "Projected Jobs ('000)", "format": ",.1f"},
+      {"field": "JobsNumeric", "type": "quantitative", "title": "Current Jobs (000's)", "format": ",.1f"},
+      {"field": "ProjectedGrowthNumeric", "type": "quantitative", "title": "Projected Jobs (000's)", "format": ",.1f"},
       {"field": "SalaryNumeric", "type": "quantitative", "title": "Avg Salary", "format": "$,.0f"}
     ]
   }

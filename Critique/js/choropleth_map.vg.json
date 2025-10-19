@@ -2,12 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "projection": {"type": "mercator"},
   "background": null,
-  "width": 800, 
-  "height": 600, 
+  "width": 700,
+  "height": 550,
   "autosize": {
     "type": "fit",
-    "contains": "padding",
-    "resize": true
+    "contains": "padding"
   },
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
@@ -18,8 +17,7 @@
       "titleFontSize": 16
     },
     "view": {
-      "stroke": null,
-      "align": "center" 
+      "stroke": null
     },
     "style": {
       "tooltip": {
@@ -34,7 +32,6 @@
       "font": "Fira Sans Condensed, sans-serif"
     }
   },
-  "center": true,
   "layer": [
     {
       "data": {
@@ -101,8 +98,9 @@
             "title": "Employment Rate (%)",
             "values": [0, 0.25, 0.5, 0.75, 1],
             "format": ".1f",
-            "orient": "right",
-            "offset": 40,
+            "orient": "none",
+            "legendX": 850,
+            "legendY": 50,
             "direction": "vertical",
             "labelExpr": "60 + datum.value * 15"
           }
