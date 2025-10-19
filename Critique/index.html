@@ -61,7 +61,7 @@
     <section class="section alt-section">
       <h2 class="graph-title">🌍 Employment by Region & Labour Market Ratings 🌍</h2>
       <p style="text-align: center; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        Explore the map and heatmap below to view employment data by region and labour market ratings over time.
+        click on regions of the map to filter the state/territory of the heatmap and explore employment rates and labour market ratings by region.
       </p>
       <div class="interactive-pair">
         <div class="vis-block">
@@ -72,7 +72,10 @@
         </div>
       </div>
       <p style="text-align: center;">
-Majority of the inner areas of Australia do not have many residents nor businesses (dessert land), hence the outskirts of Australia have greater employment rates.      </p>
+Majority of the inner areas of Australia do not have many residents nor businesses (dessert land), hence the outskirts of Australia have greater employment rates. The ACT has the current higghest employment rate 
+of 78%, with regions like Perth-North East, Adelaid-North, Melbourne-North East, Sydney-Inner Southwest, Gold Coast, and Darwin being above 70%. The Southwest of Sydney has consistenly had great market rating indicating a strong labour market. 
+Regions like Sydeny Norther Beaches has had a poor labour market rating for a while now, indicating a weak labour market in that area. 
+</p>
     </section>
 
     <!-- Section 4 -->
@@ -151,8 +154,8 @@ Majority of the inner areas of Australia do not have many residents nor business
     })
     .catch(console.error);
 
-  // Load heatmap and set up interactivity
-  vegaEmbed('#employed_map1', 'js/first.vg.json', embedConfigCanvas)
+  // Load heatmap with SVG renderer and set up interactivity
+  vegaEmbed('#employed_map1', 'js/first.vg.json', embedConfigSVG)
     .then(result => {
       heatmapView = result.view;
       if (mapView) {

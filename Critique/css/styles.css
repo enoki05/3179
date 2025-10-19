@@ -218,6 +218,26 @@
 #employed_map svg {
   transform: none !important;
 }
+.vega-bindings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.vega-bind {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 10px;
+}
+
+.vega-bind input,
+.vega-bind select {
+  margin-left: 8px;
+}
 
     /* === RESPONSIVE DESIGN === */
     @media screen and (max-width: 1024px) {
