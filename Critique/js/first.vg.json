@@ -10,7 +10,7 @@
   "title": {
     "text":  "Market Rating by Region in Australia",
     "anchor": "middle",
-    "fontSize": 18,
+    "fontSize": 23,
     "font": "Fira Sans Condensed, sans-serif",
     "fontWeight": "bold"
   },

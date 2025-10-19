@@ -11,7 +11,7 @@
   "title": {
     "text":  "Employment Rate by Region in Australia",
     "anchor": "middle",
-    "fontSize": 18,
+    "fontSize": 25,
     "font": "Fira Sans Condensed, sans-serif",
     "fontWeight": "bold"
   },

@@ -27,7 +27,7 @@
         {
           "width": 300,
           "height": 300,
-          "title": {"text": "Reason for Recruiting", "anchor": "middle", "fontSize": 16},
+          "title": {"text": "Reason for Recruiting", "anchor": "middle", "fontSize": 18},
           "data": {
             "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/Recruitment_Reason.csv"
           },
@@ -98,7 +98,7 @@
           "title": {
             "text": "Reason for Recruiting",
             "anchor": "middle",
-            "fontSize": 13,
+            "fontSize":15,
             "fontWeight": "bold",
             "offset": 15
           },
@@ -141,7 +141,7 @@
         {
           "width": 300,
           "height": 300,
-          "title": {"text": "Recruitment Difficulties", "anchor": "middle", "fontSize": 16},
+          "title": {"text": "Recruitment Difficulties", "anchor": "middle", "fontSize": 18},
           "data": {
             "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/recruitment_difficulties.csv"
           },
@@ -210,7 +210,7 @@
           "title": {
             "text": "Recruitment Difficulties",
             "anchor": "middle",
-            "fontSize": 13,
+            "fontSize": 15,
             "fontWeight": "bold",
             "offset": 15
           },
@@ -256,7 +256,7 @@
         {
           "width": 300,
           "height": 300,
-          "title": {"text": "Number of Recruitment Stages", "anchor": "middle", "fontSize": 16},
+          "title": {"text": "Number of Recruitment Stages", "anchor": "middle", "fontSize": 18},
           "data": {
             "url": "https://raw.githubusercontent.com/enoki05/3179/refs/heads/main/data/recruitment_stages.csv"
           },
@@ -322,7 +322,7 @@
           "title": {
             "text": "Number of Recruitment Stages",
             "anchor": "middle",
-            "fontSize": 13,
+            "fontSize": 15,
             "fontWeight": "bold",
             "offset": 15
           },
