@@ -84,8 +84,8 @@
             "titleFontSize": 16,
             "labelFontSize": 14,
             "grid": true,
-            "gridColor": "#666666",
-            "gridOpacity": 0.2
+            "gridColor": "#bbbbbb",
+            "gridOpacity": 0.1
           }
         },
         "tooltip": [

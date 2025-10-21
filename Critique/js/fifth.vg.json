@@ -95,6 +95,7 @@
         },
         {
           "width": 300,
+          "height": 80,
           "title": {
             "text": "Reason for Recruiting",
             "anchor": "middle",
@@ -207,6 +208,7 @@
         },
         {
           "width": 300,
+          "height": 120,
           "title": {
             "text": "Recruitment Difficulties",
             "anchor": "middle",
@@ -219,8 +221,8 @@
               {"label": "Lack of suitable applicants", "color": "#e3e6e8", "order": 0},
               {"label": "Undesirable working conditions", "color": "#d4ecfc", "order": 1},
               {"label": "Applicants lack experience", "color": "#5a8cad", "order": 2},
-              {"label": "Applicants lacked technical skills", "color": "#294f69", "order": 3},
-              {"label": "Lack of applicants", "color": "#0d2a3d", "order": 4},
+              {"label": "Applicants lacked technical skills", "color": "#0d2a3d", "order": 3},
+              {"label": "Lack of applicants", "color": "#08306b", "order": 4},
               {"label": "Other reasons", "color": "#02121c", "order": 5}
             ]
           },
@@ -300,7 +302,7 @@
                 },
                 "tooltip": [
                   {"field": "Stages", "type": "nominal", "title": "Number of Stages"},
-                  {"field": "PercentageNumeric", "type": "quantitative", "title": "Percentage (%)", "format": ".1f"}
+                  {"field": "PercentageNumeric", "type": "quantitative", "title": "Percentage (%)", "format": ".1%"}
                 ]
               }
             },
@@ -319,6 +321,7 @@
         },
         {
           "width": 300,
+          "height": 80,
           "title": {
             "text": "Number of Recruitment Stages",
             "anchor": "middle",

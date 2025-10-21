@@ -1,6 +1,5 @@
 
-
-    * {
+ * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -146,6 +145,20 @@
       min-height: 400px;
       display: block;
     }
+    /* Add this to your CSS */
+#employed_map4 {
+  min-height: auto !important;
+}
+
+.section:has(#employed_map4) .vis-block {
+  padding: 20px;
+  min-height: auto;
+}
+
+/* Force the Vega embed container to respect the chart size */
+#employed_map4 .vega-embed {
+  min-height: auto !important;
+}
 
     /* Vega embed responsive styling */
     .vega-embed {
@@ -238,6 +251,7 @@
 .vega-bind select {
   margin-left: 8px;
 }
+
 
     /* === RESPONSIVE DESIGN === */
     @media screen and (max-width: 1024px) {

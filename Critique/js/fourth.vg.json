@@ -5,7 +5,8 @@
   "height": 400,
   "autosize": {
     "type": "fit",
-    "contains": "padding"},
+    "contains": "padding"
+  },
   "config": {
     "font": "Fira Sans Condensed, sans-serif",
     "background": null,
@@ -14,7 +15,7 @@
     "title": {"fontSize": 18, "fontWeight": "bold", "font": "Fira Sans Condensed, sans-serif"}
   },
   "title": {
-    "text":  "Suitable vs Qualified vs Total Applicants per Vacancy (2021-2025)",
+    "text": "Suitable vs Qualified vs Total Applicants per Vacancy (2021-2025)",
     "anchor": "middle",
     "fontSize": 18,
     "font": "Fira Sans Condensed, sans-serif",
@@ -29,65 +30,147 @@
       {"Year": "2025", "Total applicants per vacancy": 27.5, "Qualified applicants per vacancy": 9.3, "Suitable applicants per vacancy": 4.3}
     ]
   },
-  "transform": [
+  "layer": [
     {
-      "fold": [
-        "Total applicants per vacancy",
-        "Qualified applicants per vacancy",
-        "Suitable applicants per vacancy"
+      "transform": [
+        {
+          "fold": [
+            "Total applicants per vacancy",
+            "Qualified applicants per vacancy",
+            "Suitable applicants per vacancy"
+          ],
+          "as": ["Category", "Count"]
+        }
       ],
-      "as": ["Category", "Count"]
-    }
-  ],
-  "mark": {"type": "bar"},
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "ordinal",
-      "axis": {
-        "labelFontSize": 14,
-        "titleFontWeight": "bold",
-        "titleFontSize": 16,
-        "title": "Year"
+      "mark": {"type": "bar"},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {
+            "labelFontSize": 14,
+            "titleFontWeight": "bold",
+            "titleFontSize": 16,
+            "title": "Year"
+          }
+        },
+        "y": {
+          "field": "Count",
+          "type": "quantitative",
+          "title": "Applicants per Vacancy",
+          "axis": {
+            "titleFontWeight": "bold",
+            "titleFontSize": 16,
+            "labelFontSize": 14,
+            "grid": true,
+            "gridColor": "#bbbbbb",
+            "gridOpacity": 0.3
+          }
+        },
+        "xOffset": {"field": "Category"},
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Total applicants per vacancy",
+              "Qualified applicants per vacancy",
+              "Suitable applicants per vacancy"
+            ],
+            "range": ["#74c476", "#238b45", "#00441b"]
+          },
+          "legend": {
+            "title": "Applicant Type",
+            "orient": "top",
+            "direction": "horizontal",
+            "titleFontSize": 14,
+            "labelFontSize": 10
+          }
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "Category", "type": "nominal", "title": "Applicant Type"},
+          {"field": "Count", "type": "quantitative", "title": "Count Per Vacancy", "format": ".1f"}
+        ]
       }
     },
-    "y": {
-      "field": "Count",
-      "type": "quantitative",
-      "title": "Applicants per Vacancy",
-      "axis": {
-        "titleFontWeight": "bold",
-        "titleFontSize": 16,
-        "labelFontSize": 14,
-        "grid": true,
-        "gridColor": "#666666",
-        "gridOpacity": 0.2
-      }
-    },
-    "xOffset": {"field": "Category"},
-    "color": {
-      "field": "Category",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Total applicants per vacancy",
-          "Qualified applicants per vacancy",
-          "Suitable applicants per vacancy"
-        ],
-        "range": ["#74c476", "#238b45", "#00441b"]
+    {
+      "transform": [
+        {
+          "fold": [
+            "Total applicants per vacancy",
+            "Qualified applicants per vacancy",
+            "Suitable applicants per vacancy"
+          ],
+          "as": ["Category", "Count"]
+        },
+        {"filter": "datum.Year == '2025'"},
+        {"filter": "datum.Category != 'Total applicants per vacancy'"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -5,
+        "fontSize": 11,
+        "fontWeight": "normal"
       },
-      "legend": {
-        "title": "Applicant Type",
-        "orient": "top",
-        "direction": "horizontal",
-        "titleFontSize": 14,
-        "labelFontSize": 10
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Count",
+          "type": "quantitative"
+        },
+        "xOffset": {"field": "Category"},
+        "text": {
+          "field": "Count",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        "color": {"value": "#333333"}
       }
     },
-    "tooltip": [
-      {"field": "Year", "type": "ordinal", "title": "Year"},
-      {"field": "Category", "type": "nominal", "title": "Category"},
-      {"field": "Count", "type": "quantitative", "title": "Count", "format": ".1f"}
-    ]
-  }
+    {
+      "data": {
+        "values": [
+          {"Year": "2025", "line1": "27.5 applicants are now", "line2": "applying for one vacancy", "y": 29.5}
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#74c476",
+            "dy": 0
+          },
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal"},
+            "y": {"field": "y", "type": "quantitative"},
+            "text": {"field": "line1", "type": "nominal"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#74c476",
+            "dy": 12
+          },
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal"},
+            "y": {"field": "y", "type": "quantitative"},
+            "text": {"field": "line2", "type": "nominal"}
+          }
+        }
+      ]
+    }
+  ]
 }
